@@ -8,6 +8,12 @@ public class FirstJavaTest {
 		TotalPrice = price * qty;
 		char c = 'F';
 		boolean flag = true;
+		System.out.println(qty);
+		System.out.println(price);
+		System.out.println(TotalPrice);
+		System.out.println(c);
+		System.out.println(flag);		
+
 		System.out.println("Value of qty = " +qty);
 		System.out.println("Value of price = " + price);
 		System.out.println("Total Price = " + TotalPrice);

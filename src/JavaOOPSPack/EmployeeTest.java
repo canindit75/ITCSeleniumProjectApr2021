@@ -1,4 +1,5 @@
 package JavaOOPSPack;
+//Demo for Objects of Employee Class
 public class EmployeeTest {
 	  public static void main(String[] args){
 		  //create an instance or object of Employee class

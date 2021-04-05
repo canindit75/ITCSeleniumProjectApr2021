@@ -1,4 +1,5 @@
 package JavaOOPSPack;
+//Demo for method 
 public class Calculate {
 	public void Sum1(int n1, int n2){
 		int sum = 0;
