@@ -27,6 +27,5 @@ public class EmployeeTest {
 		  
 		  Employee emp6 = new Employee(104,"Anindita");
 		  emp6.displayEmpRecord();
-
 	  }
 }
