@@ -1,0 +1,695 @@
+PreAssessment Test
+==================
+You can join the LMS platform by clicking on below link –.
+https://els.teamleaseuniversity.ac.in/
+ 
+*User credentials & Password will be as below –
+ 
+User Name – Enter your Official email iD in small Letters
+Password - Enter your Official email iD in small Letters
+
+Google Drive link
+=================
+https://drive.google.com/drive/folders/15wpEV_k6kAZDldC5ixAPcMplX6duAvl4?usp=sharing
+
+Github link 
+===========
+https://github.com/canindit75/ITCSeleniumProjectApr2021
+
+
+1.Download and Install JDK 1.8+ 
+Location where my JDK is installed C:\Program Files\Java\jdk1.8.0_211
+To verify JDK is installed successfully
+Execute the command java -version in Command Prompt
+
+2.Setup the Environment for Java
+a) Go to This PC > Right Click Properties > Click on Advanced System Settings > Click on Environment Variables
+Click on System Variables
+Specify System Name as JAVA_HOME
+Value as C:\Program Files\Java\jdk1.8.0_211
+JAVA_HOME = C:\Program Files\Java\jdk1.8.0_211
+b)Place the cursor on any of the variables and Type P for Path variable,
+Double Click on Path variable,
+Click on New and Specify 
+%JAVA_HOME%\bin
+C:\Program Files\Java\jdk1.8.0_211\bin
+
+3.Download and Extract Eclipse IDE (Mars 2)
+Extract to \eclipse-jee-mars-2-win32-x86_64
+\Softwares\eclipse-jee-mars-2-win32-x86_64\eclipse
+Double click on eclipse.exe 
+This is the default workspace location
+C:\Users\Anindita\workspace
+We would like to maintain the workspace inside the path/location
+Updated the workspace path to 
+F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace
+Click on OK
+Launch Eclipse
+
+4.Create a Java Project in Eclipse IDE
+Select File Menu > New  > Select Project > Select JavaProject > Specify the Project name "SeleniumProject" and Click on Finish button
+Say No to Open Associated Perspective - This will create the Java Project
+
+Lets quickly have a look at the Java Project Structure
+Project
+  src
+  bin	
+  Referenced JDK 1.8 [which is used for recognizing for java commands in your project]
+ .settings
+ .project
+ .classpath
+
+src folder - is a place holder for our source code 
+- .java files
+bin folder is a placed holder for compiled .java class files 
+compiled class files will have an extension of .class
+
+create a src/FirstJavaTest.java ===> Gets compiled through javac compiler ==> bin/FirstJavaTest.class ==> Run this Program using java executable and it prints the output to console in Eclipse IDE
+
+Create a class file named FirstJavaTest.java in src folder and write a simple print statement
+Right Click on src folder > Select New > Class > Specify class name
+"FirstJavaTest" - select the option public static void main(String[] args) and Click on OK button
+
+Run as Java Application
+
+Java Programming Basics
+=======================
+What are variables? different data types + different decision making statements - if then else, for, while,do while, switch statements and then arrays
+
+Variables is basically a placeholder for storing data of different data types in memory location. we can change the value of variables
+to declare a variable, we also need to specify the data type with which the variable is declared
+
+Different Primitive data types are 
+byte,short,char,int,long,float,double
+
+syntax of declaring a variable
+<<data type>> <<variable name>>;
+
+1.Java is case sensitive
+2.every statement in java ends with semi colon
+
+int qty;
+double price;
+
+assign a value to the variable 
+<<datatype >> <<variablname>> = <<value of variable>>;
+
+concatenate a meaning static string to the variable 
+Concatenation operator + for concatenating string and variable
+string is nothing but a static text and will print as it is 
+and variable is replaced with the value of the variable
+
+		System.out.println(qty);
+		System.out.println(price);
+		System.out.println(TotalPrice);
+		System.out.println(c);
+		System.out.println(flag);
+
+		System.out.println("Value of qty = " +qty);
+		System.out.println("Value of price = " + price);
+		System.out.println("Total Price = " + TotalPrice);
+		System.out.println("Char value of c = "+ c);
+		System.out.println("Flag =  " +flag);
+
+
+for example
+		System.out.println(x+y+s);
+		System.out.println(s+x+y);
+in the first statement, it adds up 2 integers , converts it to a string and appends with s which is a string
+300Hello
+
+In the second statement, since s is in the beginning and it is a string, it will convert everything after it to a string to be concatenated with a string
+Hello100200
+Now, in case i want Hello300, in that case, I need to change the 
+operator precedence by placing the 2 integers in round braces
+		System.out.println(s+(x+y));
+Hello300
+
+
+If you notice, when we are running a java program - starting or entry point is the public static void main(String[] args) 
+we cannot run As a Java Application  unless we have this static main method
+when we run the program - all the statements in the static main method runs sequentially all the statements from the beginning till the end of the method.
+
+looping statements  
+==================
+-  Conditional execution not execution of all statements
+
+Block is indicated by curly braces
+{
+
+}
+if then else 
+============
+Syntax of if example
+
+if (condition)
+{
+  //block of statements
+}
+else if(condition)
+{
+ //block of statements
+}
+else 
+{
+  //block of statements
+}
+Equivalence Class Partitioning and Boundary Value Analysis
+2 partition classes
+0 - 39 ==> valid class fail
+40 - 100 ===> valid class pass
+<0 or > 100 ==> invalid score
+
+for loop
+========
+ - Executing a block of statements for a specified number of times
+
+Syntax of for loop
+==================
+for(initialization;condition;increment or decrement step)
+{
+   //block of statements
+}
+
+Example of for loop
+I want to print 1 to 10 numbers 
+for(int i=1;i<=10;i++)
+{
+  System.out.println("i = " + i);
+}
+
+1.First it performs one time initialization i = 1
+2.It performs a check on the condition 
+1 <=10 => condition returns true or is satisfied, it executes the block of statements - it print i = 1 to the console 
+3.After execution of block of statements, it performs increment of decrement step i++ i becomes from 1 to 2 
+Again perform condition check 2<=10 => true => execute block of statements
+till the condition is not satisfied 
+condition is not satisfied when i = 11 in this case, it will not execute the block of statements and come out of the for loop
+
+while loop - 
+==========
+Executing a block of statements as long as the condition is satisfied
+
+Syntax of while loop
+====================
+initialization statement
+while(condition)
+{
+  //block of statements
+}
+
+Example of while loop
+=====================
+int i = 1;
+while(i<=10)
+{
+  System.out.println("i = " + i);
+  i = i + 1; //if this statement is not specified - it goes into infinite //loop - because the condition will always satisfied it nevers comes out //of the while loop
+}
+
+do while loop
+=============
+lets first have a look at the difference between while and do while statements
+in while statement, the condition check happens at the beginning thus if the condition is not satisfied the first time, it will not execute the block of statement at all.
+in do while statement, the condition check happens at the end thus even if the condition is not satisfied for the first time, it will execute the block of statements at least once - this is not recommended 
+
+Syntax of do while
+===================
+do
+{
+
+}while(condition);
+
+Example of do while
+====================
+int i = 1;
+do{
+   System.out.println("i = " + i);
+   i = i + 1; 
+}while(i <=10);
+
+
+break statement
+===============
+break statement is used to exit out of a for loop, while loop, do while loop, switch statement
+
+i=i+1
+i++
+
+switch statement
+================
+It is basically used to execute a block of statements based on matching case statement
+Syntax of switch statement
+==========================
+
+switch(expression or variable)
+{
+
+case 0 : {}
+case 1 : {}
+case 2 : {}
+}
+
+Example of switch statement
+===========================
+int weekday = 0;
+lets assume 0 - 6 represents Mon,Tues,Wed,Thur,Fri,Sat,Sun
+
+switch(weekday){
+ case 0 :System.out.println("Monday");break;
+ case 1 :System.out.println("Tuesday");break;
+ case 2 :System.out.println("Wednesday");break;
+ case 3 :System.out.println("Thursday");break;
+ case 4 :System.out.println("Friday");break;
+ case 5 :System.out.println("Saturday");break;
+ case 6 :System.out.println("Sunday");break;
+ default: System.out.println("Invalid Weekday");break;
+}
+
+So, if there is no break for each statement, then it execute all the case statements after matching case statements
+
+Arrays
+======
+		int arr[] = new int[4];
+		arr[0]  = 34;
+		arr[1] = 56;
+		arr[2] = 67;
+		arr[3] = 78;
+		for(int i = 0;i<arr.length;i++)
+		{
+			 System.out.println("arr["+i+"] = "+arr[i]);
+		}
+		
+		String[][] emp = new String[3][3];
+		emp[0][0] = "100";
+		emp[0][1] = "Rakesh";
+		emp[0][2] = "ITC";
+		emp[1][0] = "101";
+		emp[1][1] = "Punitha";
+		emp[1][2] = "Samsung";
+		emp[2][0] = "102";
+		emp[2][1] = "Lakshmi";
+		emp[2][2] = "Reliance";
+		for(int r = 0;r <emp.length;r++)
+		{
+		 for(int c=0;c<emp[r].length;c++)
+		  {
+		     System.out.print("emp["+r+"]["+c+"] = " + emp[r][c] + "\t");
+		  }
+		  System.out.println("");
+		}
+	}
+
+OOPS Concepts
+==============
+Here we will learn about
+how to create classes, objects,methods, method overloading, constructors,
+constructor overloading, inheritance, method overriding,packages, access modifiers, static keyword, interfaces, exception handling, String Manipulations
+
+collections and file handling - we will learn during selenium java sessions
+
+OOPs - stands Object Oriented programming language where in all the code is in the form of classes, objects and methods
+
+What is a Class?
+class is a blue print or template for an object. class will have 
+data members or properties, methods or behaviors, constructors
+
+public class <<classname>>
+{
+  ///data members or properties
+
+  ///methods or behaviors
+  ///constructors
+}
+
+Lets take an example of class - Lets the same example which we took for 2 dimension array 
+   c1       c2      c3 
+   empid   empname  company
+r1 100    Rakesh   ITC
+r2 101    Punitha  Samsung
+r3 102    Lakshmi  Reliance
+
+public class Employee{
+  /3 data members
+  int empid;
+  String empname;
+  String company;
+  //2 behaviors - insert or creating an emp record
+  //display emp record
+
+  public void insertEmpRecord(int eid,String ename,String comp){
+     empid = eid;
+     empname = ename;
+     company = comp;
+  }
+
+  public void displayEmpRecord()
+  {
+    System.out.println("empid = " + empid + " empname = " + empname + " company = " + company);
+  }  
+}
+
+Objects - you can derive from objects from class - class is a blue print for object - for every employee object, we need to create an instance of the Employee access and only then can we access the data members and methods of the Employee class via Employee objects. 
+We cannot access methods and data members of class directly unless it is declared as static
+
+Method definition
+public static void/return type methodname(parameters)
+{
+
+}
+
+<<access modifier>> <<static>> void methodname(datatype parameter,...)
+{
+
+}
+
+example of non static method with no return type with no parameter
+=================================================================
+public void Sum(){
+	int sum = 0;
+        int n1 = 10;
+        int n2 = 11;
+        sum = n1 + n2;
+        System.out.println("sum = "  + sum);
+}
+
+
+example of non static method with no return type with Parameters
+=================================================================
+public void Sum(int n1, int n2){
+	int sum = 0;
+        sum = n1 + n2;
+        System.out.println("sum = "  + sum);
+}
+
+Example of non static method with return type with parameters
+==============================================================
+public int Sum(int n1, int n2){
+	int sum = 0;
+        sum = n1 + n2;
+       // System.out.println("sum = "  + sum);
+       return sum; 
+}
+Method can be a procedure or a function 
+procedure does not have a return type - it will be void 
+function will have a single return type - it will specify the data type of value being returned
+When a function returns a value , you can capture or print this value
+
+Lets make an assumption that the above method is declared in Calculate class 
+public static void main(String[] args){
+ //to access an non static method of any class, first we need to create an instance of the class
+   Calculate c1 = new Calculate();
+   int s = c1.Sum(10,11);
+   System.out.println("sum = " + s);
+}
+
+What is the purpose of writing functions/methods/procedures
+It allows to reuse the same functionalities which require to be called repeatedly 
+Now, what is the purpose of passing parameters - allows us to the use the function/procedure with different sets of data - 
+10 + 20
+30 + 40
+23 + 45
+
+How does function internally work?
+Writing a function will not call itself
+When you invoke or call a function, it goes to the function and executes all the statements in the function in sequence and then returns to called or invoked function from where it is called and it continues with the execution of the next statement after call of function statement
+
+Method Overloading
+==================
+We can perform the same operation in multiple ways or differently. Now, since the operation being performed is the same, we can have same method name but in method overloading inorder to distinguish one method to another, we need to pass different types of parameters and different number of parameters - this is distinguishing factor in method
+
+Search(CurrentDate)
+Search(FromDate,ToDate)
+
+Sum of 2 integers
+Sum of 3 integers
+Sum of 2 doubles
+Sum of 1 int and 1 double
+
+Exact Match ===> The examples which we looked at are of Exact Match
+
+Duplicate ==> Same Method definition - defined twice is duplicate
+from method definition to number and types of parameters all are same - that means it is a duplicate
+
+Type Promotion
+==============
+We will first comment the method  Sum(int n1, int2) 
+Now, once Sum(int n1,int n2) is commented,
+if we execute Sum(10,20); it will still not show an issue since 
+there is another method Sum(int n1,double n2) 
+This is not an example of exact match but 
+int n1 gets passed as an exact match to int n1 but the second parameter which is integer is type promoted to double 
+
+Ambiguity
+=========
+public void Sum(int n1,double n2){
+  System.out.println("Sum(int n1,double n2)");
+}
+
+public void Sum(double n1,int n2){
+  System.out.println("Sum(double n1,int n2)");
+}
+
+Now, Sum(10,10); when invoked shows Ambiguity because it does not know whether to type promote the first parameter or the second parameter
+
+Undefined
+=========
+c1.Sum("10", "20"); no method with 2 string parameters
+
+Ambiguity/Undefined/Duplicate - does not allow to run the program
+
+Constructors
+============
+1.Constructors is used to initialize the instance of a class.
+2.Name of the Constructor is same as the name of the Class
+3.There is no return type in constructors
+4.Constructors are called or invoked at the time of object creation 
+so when we create an instance of Employee class, we are calling a default constructor when no parameters are passed
+5.At the time object creation, when we create an object using Parameterized Constructor, it calls the matching or corresponding the Parameterized Constructor [ number of parameters and types of parameters are same]
+4.Constructors are of 2 types 
+default constructor and parameterized constructor
+Syntax of default constructor is 
+public <<Classname>>(){
+
+}
+public Employee(){
+  System.out.println("Default Constructor of Employee");
+}
+
+Example of Parameterized Constructor
+public Employee(int id, String name,String comp){
+   empid = id;
+   empname = name; 
+   company = comp;
+}
+
+As a best practice and for readability purpose, we can use of the this keyword to differentiate between method argument and an instance or object level variable
+
+In a class, empid, empname and company are instance/object level variables when they are declared as non static
+Thats why they are accessible via object reference [after object instance creation]
+If I want to specify the names for the argument as well for the instance level variables, we can identify the instance level variables via this key word
+
+public Employee(int empid, String empname,String company){
+   System.out.println("Employee Parameterized Constructor");
+   this.empid = empid;
+   this.empname = empname; 
+   this.company = company;
+}
+
+Please note - we cannot make use of this keyword in public static void main(String[] args) - it is only accessible in class non static methods
+
+Constructor Overloading
+=======================
+When we apply overloading on Constructor , it is called Constructor Overloading, when applied on method, it is called method overloading
+
+  public Employee(int empid, String empname){
+	  this.empid = empid;
+	   this.empname = empname; 	  
+  }
+  
+  public Employee(int empid, String empname,String company){
+	   System.out.println("Employee Parameterized Constructor");
+	   this.empid = empid;
+	   this.empname = empname; 
+	   this.company = company;
+	}
+
+Inheritance
+===========
+Inheritance requires 2 classes - parent class and child class 
+Inheritance implies child class inherits/acquires all the properties and behavior of the parent class
+Vehicle is a parent class
+Car is a child Class of Parent Class Vehicle
+To show that Car class inherits Parent Class Vehicle, we make use of keyword extends
+Childclass extends parentClass
+public class Car extends Vehicle{
+
+
+}
+
+In the Parent Class, we will declare a variable and method 
+and check if the inherited Child class acquires the properties and behavior of the Parent Class i.e., Vehicle
+
+Method Overriding
+=================
+1.When the same method definition and variable is also available in the child class apart from the parent class, it will override parent implementation with child implementation
+
+2.Now, even when we have the same method definition in parent and child, we still want to refer back to parent implementation - in that case, we make use of super keyword - this is used only in class methods
+
+3.Lets create a constructor both in the parent class and the child class, when it comes to inheritance in case of method - child implementation overrides parent implementation - but in case of constructor, when we create an instance of child class, it first triggers the parent constructor and then child constructor - so both the constructors called in sequence 
+
+4.In case, in child constructor, i can refer back to parent constructor - in that case only one constructor gets called - that is parent constructor - using the keyword super()
+if in the child constructor - i specify super() - it will only call the parent constructor via child constructor
+
+Packages
+=======
+Packages are used to organize related files - classes or interfaces
+java.util.*
+java.net.*
+
+1.Select src folder > Right Click > Select New > package > Specify Packagename
+
+com.project.testcases
+com.project.testdata
+2.When the package is created, internally created a directory structure
+under src
+       com 
+         project
+            testcases
+            testdata
+3.How to identify which class belongs to which package
+in the class file, you will notice - the first statement
+says which your class belongs to which package 
+package com.project.testcases
+you create a class inside the package with name TestCase1.java - it automatically mentions the package name in which the class resides in the first statement using 
+package <<packagename>>;
+
+4.How to access a class in one package in the class of another package
+we have created 2 packages
+com.project.testcases
+   TestCase1.java
+com.project.testdata
+   TestData1.java
+   TestData2.java
+
+
+Now, lets assume TestCase1.java requires to use TestData1.java class
+we will create an instance TestData1 in TestCase1 
+
+package com.project.testcases;
+
+import com.project.testdata.TestData1;
+
+//import com.project.testdata.TestData1;
+public class TestCase1 {
+  public static void main(String[] args){
+//to access this class of another package, we need to import the class
+//importing the class requires to specify complete package with class name preceded with import
+//Short Cut is Ctrl+Shift + O for importing all packages
+	TestData1 td = new TestData1();
+ }
+}
+
+if i donot make use of import statement, which is not a good practice the n we need to specify fully qualified name
+
+com.project.testdata.TestData1 td = new com.project.testdata.TestData1();
+com.project.testdata.TestData2 td = new com.project.testdata.TestData2();
+
+Access Modifiers
+================
+There are 4 types of access modifiers 
+private, default , protected and public 
+
+private - when you specify a method or variable as private, it is retricted to class only in which it is declared and it is not accessible outside the class 
+
+default -  when we specify a method or variable as default, it is accessible to all the classes in the same package and it is not accessible outside the package or classes of another package - to specify default, we donot need to mention any access modifier - it implied as default 
+
+public - accessible to all packages
+
+protected - when we specify a method or variable as protected, it is accessible or restricted to the class of another package via inheritance and not otherwise
+
+TO demonstrate this 4 access modifiers
+lets create 2 package and 2 classes in each package
+pack1
+  class1
+  class2
+pack2
+  class3
+  class4
+
+for protected demonstration, we will class4 will extend class1
+1.modified the access modifier of variable and method in class1 to protected
+2.made a copy of the public static void main(String[] args) in class4
+3.class4 inherits the properties and behavior of class1 which has protected variable and methods 
+4.class4 is class in anothe package separate from class1 in pack1 which is the parent class of class4 in pack2
+5.we need to create an instance of child class and not parent class
+class4 
+
+Static Keyword
+==============
+There are 3 types of variables
+1.local or method level variable - scope is limited to the method - accessible and valid within the method scope
+2.instance or object level variable - it is accessible only via object instance of a class
+3.static or class level variable - it is accessible via class name
+
+In Static, we have static variables, methods, blocks
+
+Lets start with static variable
+when we declare a variable as static - it is a static variable
+Lets also check the difference in behavior between static and instance variables
+Object level variables - there is a need to have separate memory location for each variable
+emp1 		emp2            emp3             emp4            emp5
+empid=100       empid=101       empid=102         empid=103   
+empname=Rakesh  empname=Punitha  empname=Lakshmi empname=Anindita
+company=ITC  company=Samsung  company=Reliance company=null
+
+if i declare company as static, it will have memory location
+and if i update value via either classname or any object, it will get updated in one location - this is helpful memory management
+it implies - if a company is declared as static, then all employees belong to the same company
+
+static company 
+created emp1 object with company = ITC
+company = ITC
+created emp2 object - if company name is not specified
+it will show company as ITC
+
+static keyword - we will use for counter variable
+=================================================
+1.Declared a static int count variable and initialized it to 0 in Employee2.java
+2.Incremented the count variable in all the constructors - parameterized and default
+3.We also include to print the value of count in displayEmpRecord() method
+4.Then we tested using EmployeeTest2.java class file
+
+Applying static keyword to a method
+====================================
+1. created a static method in Employee2.java
+ public static String ChangeCompany(String comp){
+	  return comp;
+  }
+2.in EmployeeTest2.java,
+  	  String c = Employee2.ChangeCompany("MPhasis");
+	  System.out.println ("company = "+c);
+	
+
+static block
+============
+1.static block is called even before the public static void main(String[] args)
+2.static block is used initialize static variables just like constructors are used to initialize object instances of a class
+3.static block looks like - it is declared in Employee2.java class
+static{
+  company = "Amazon";
+}
+4.The order of execution is static block followed by 
+public static void main(String[] args) in EmployeeTest2.java
+
+The first statement in public static void main(String[] args) in EmployeeTest2.java
+System.out.println("company = " + Employee2.company);
+
+Interfaces
+==========
+
+Exception Handling
+==================
+
+String Manipulations
+====================
