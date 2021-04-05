@@ -21,5 +21,8 @@ public class EmployeeTest {
 		  //when object is not initialized - it shows default values
 		  //for int it is 0 and for string it is nulls
 		  emp4.displayEmpRecord();
+		  
+		  Employee emp5 = new Employee(103,"Nitmani","ITC");
+		  emp5.displayEmpRecord();
 	  }
 }
