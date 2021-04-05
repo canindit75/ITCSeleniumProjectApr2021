@@ -5,9 +5,12 @@ public class While_Example {
 		{
 		  System.out.println("i = " + i);
 		  i = i + 1; //if this statement is not specified - it goes into infinite //loop - because the condition will always satisfied it nevers comes out //of the while loop
+		  if(i == 5)
+			  break;
+
 		}
 		i = 10;
-		while(i>0){
+		while(i>0){			
 			System.out.println("i = " + i);
 			i = i - 2;
 		}
