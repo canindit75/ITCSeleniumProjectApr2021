@@ -1,3 +1,4 @@
+package JavaPack;
 public class While_Example {
 	public static void main(String[] args) {
 		int i = 1;

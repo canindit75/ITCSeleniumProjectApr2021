@@ -1,3 +1,4 @@
+package JavaPack;
 public class DoWhile_Example {
 	public static void main(String[] args) {
 		int i = 1;

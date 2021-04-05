@@ -1,3 +1,4 @@
+package JavaPack;
 public class Switch_Example {
 	public static void main(String[] args) {
 		int weekday = 5;

@@ -1,3 +1,4 @@
+package JavaPack;
 public class Array_Example {
 	public static void main(String[] args) {
 		int arr[] = new int[4];

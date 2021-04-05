@@ -1,3 +1,4 @@
+package JavaPack;
 public class For_Example {
 	public static void main(String[] args) {
 		int sum = 0;
