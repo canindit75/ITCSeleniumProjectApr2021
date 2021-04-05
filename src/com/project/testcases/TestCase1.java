@@ -15,8 +15,8 @@ public class TestCase1 {
 		//Short Cut is Ctrl+Shift + O for importing all packages
 		TestData1 td = new TestData1();
 		TestData2 td2 = new TestData2();
-		com.project.testdata.TestData1 td11 = new com.project.testdata.TestData1();
-		com.project.testdata.TestData2 td22 = new com.project.testdata.TestData2();
+		//com.project.testdata.TestData1 td11 = new com.project.testdata.TestData1();
+		//com.project.testdata.TestData2 td22 = new com.project.testdata.TestData2();
 
 	}
 
