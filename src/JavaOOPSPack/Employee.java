@@ -12,6 +12,11 @@ public class Employee{
 	  System.out.println("Default Constructor of Employee");
 	}
 
+  public Employee(int empid, String empname){
+	  this.empid = empid;
+	   this.empname = empname; 	  
+  }
+  
   public Employee(int empid, String empname,String company){
 	   System.out.println("Employee Parameterized Constructor");
 	   this.empid = empid;

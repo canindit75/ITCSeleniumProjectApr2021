@@ -24,5 +24,9 @@ public class EmployeeTest {
 		  
 		  Employee emp5 = new Employee(103,"Nitmani","ITC");
 		  emp5.displayEmpRecord();
+		  
+		  Employee emp6 = new Employee(104,"Anindita");
+		  emp6.displayEmpRecord();
+
 	  }
 }
