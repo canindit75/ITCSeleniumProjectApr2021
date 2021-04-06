@@ -46,7 +46,5 @@ public class LocateElementByIdNameClass {
 			 }
 		  System.out.print("\n");	 
 		 }
- 
-		 
-	}
+ 	}
 }
