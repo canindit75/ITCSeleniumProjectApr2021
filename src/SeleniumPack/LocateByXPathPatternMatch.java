@@ -14,6 +14,8 @@ public class LocateByXPathPatternMatch {
 		 driver.get("https://www.calculator.net/calorie-calculator.html");
 		 driver.manage().window().maximize();
 		 System.out.println("Identify all elements having attribute id starting with c");
+		 //Example of Exception in thread "main" org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //[starts-with(@id,'c')] because of the following error:
+		// List<WebElement> startswithidcxpath = driver.findElements(By.xpath("//[starts-with(@id,'c')]"));
 		 List<WebElement> startswithidcxpath = driver.findElements(By.xpath("//*[starts-with(@id,'c')]"));
 		 System.out.println("Number of elements with attribute id starting with c = " +startswithidcxpath.size() );
 		 for(WebElement element : startswithidcxpath)

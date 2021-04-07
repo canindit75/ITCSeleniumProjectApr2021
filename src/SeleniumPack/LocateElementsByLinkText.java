@@ -42,5 +42,8 @@ public class LocateElementsByLinkText {
 		 ageTextbox = driver.findElement(By.id("cage"));
 		 ageTextbox.clear();
 		 ageTextbox.sendKeys("67");
+		 //Example of NoSuchSessionException
+		 driver.close();
+		 ageTextbox.sendKeys("67"); //At this statement - NoSuchSessionException
 	}
 }

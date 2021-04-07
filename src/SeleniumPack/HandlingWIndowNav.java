@@ -28,8 +28,8 @@ public class HandlingWIndowNav {
 		 LoginNow.click();
 		 //After LoginNow is clicked - there are 2 open windows 
 		 //lets get the 2 window ids
-		 //Please note to get the cureent number of open windows - it is 
-		 //necessary to call getWindowHandles everytime a click operation opens a new window
+		 //Please note to get the current number of open windows - it is 
+		 //necessary to call getWindowHandles everytime a click operation that opens a new window
 		 Set<String> winids = driver.getWindowHandles();
 		 System.out.println("Number of Open Windows = " + winids.size());
 		 //for iterating through the winids
