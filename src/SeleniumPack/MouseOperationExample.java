@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ExplicitWaitExample {
+public class MouseOperationExample {
 	public static WebDriver driver = null;
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
@@ -26,7 +26,10 @@ public class ExplicitWaitExample {
 			 //element identification + propertycheck + timeout
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='menu']/div[2]/ul/li[3]/div/div/ul/li[3]/a")));
 			 WebElement PrinterElement = driver.findElement(By.xpath("//*[@id='menu']/div[2]/ul/li[3]/div/div/ul/li[3]/a"));
-			 PrinterElement.click();
+			 //PrinterElement.click();
+			 Actions actions = new Actions(driver);
+			 Thread.sleep(2000);
+			 actions.moveToElement(PrinterElement).click().build().perform();
 		 }
 		 catch(NoSuchElementException e){
 			 System.out.println("Printer Element is not found");
