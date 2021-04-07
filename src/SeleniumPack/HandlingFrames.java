@@ -11,9 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 public class HandlingFrames {
 	public static WebDriver driver = null;
 	public static void main(String[] args) throws InterruptedException {
-		JavascriptExecutor js = null;
-		Alert alert = null;
-		String alertMesg = null;
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://jqueryui.com/droppable/");
@@ -25,7 +22,9 @@ public class HandlingFrames {
 		//driver.switchTo().frame(1); //NoSuchFrameException
 		WebElement source = driver.findElement(By.id("draggable"));
 		WebElement destination = driver.findElement(By.id("droppable"));
-
+		//Scroll the destination element into view 
+		JavascriptExecutor js  = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView();",destination);
 		Actions actions = new Actions(driver);
 		actions.dragAndDrop(source, destination).build().perform();
 		if(destination.getText().equals("Dropped!")){
@@ -33,7 +32,8 @@ public class HandlingFrames {
 		}
 		else
 			System.out.println("Drop was not successful");
-		
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		//js.executeScript("window.scrollTo(0, 300)");
 
 	}
 }
