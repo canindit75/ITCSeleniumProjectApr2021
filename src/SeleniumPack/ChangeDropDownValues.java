@@ -1,11 +1,12 @@
 package SeleniumPack;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
 public class ChangeDropDownValues {
 
 	public static WebDriver driver = null;
@@ -38,6 +39,12 @@ public class ChangeDropDownValues {
 		 //dd.deselectByIndex(arg0);
 		 //dd.deselectByValue(arg0);
 		 //dd.deselectByVisibleText(arg0);
+		 
+		 WebElement ExtraActiveOption = driver.findElement(By.xpath("//*[@id='cactivity']/option[text()='Extra Active: very intense exercise daily, or physical job']"));
+		 System.out.println("ExtraAction Option Exact Match by text() = " + ExtraActiveOption.getText());
+		 List<WebElement> ActiveOptionList = driver.findElements(By.xpath("//*[@id='cactivity']/option[contains(text(),'Active')]"));
+		 for(WebElement Option : ActiveOptionList){
+			 System.out.println(Option.getText());
+		 }
 	}
-
 }
