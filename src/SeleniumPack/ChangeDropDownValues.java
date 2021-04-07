@@ -1,6 +1,7 @@
 package SeleniumPack;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ public class ChangeDropDownValues {
 		 driver = new ChromeDriver();
 		 driver.get("https://www.calculator.net/calorie-calculator.html");
 		 driver.manage().window().maximize();
+		 driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		 //identify dropdown activity
 		 WebElement activitydd = driver.findElement(By.id("cactivity"));
 		 //to change dropdown values - we need to create an instance Select class
