@@ -14,7 +14,8 @@ public class LocateElementByIdNameClass {
 		 driver.get("https://www.calculator.net/calorie-calculator.html");
 		 driver.manage().window().maximize();
 		 
-		 WebElement ageTextbox = driver.findElement(By.id("cage"));
+		// WebElement ageTextbox = driver.findElement(By.id("cage"));
+		 WebElement ageTextbox = driver.findElement(By.xpath("//*[@id='cage']"));
 		 ageTextbox.clear();
 		 ageTextbox.sendKeys("45");
 		 System.out.println("id value of ageTextbox = " +ageTextbox.getAttribute("id"));
@@ -24,7 +25,8 @@ public class LocateElementByIdNameClass {
 		 System.out.println("class value of ageTextbox = " +ageTextbox.getAttribute("class"));
 		 System.out.println("tagname of ageTextbox = " +ageTextbox.getTagName());
 		 //import java.util.List package
-		 List<WebElement> genderList = driver.findElements(By.name("csex"));
+		 //List<WebElement> genderList = driver.findElements(By.name("csex"));
+		 List<WebElement> genderList = driver.findElements(By.xpath("//*[@name='csex']"));
 		 //loop through the list of elements and the element which has value ="f"
 		 //id to identify the element because then the idea of using name locator strategy
 		 if(genderList.size()>0){
