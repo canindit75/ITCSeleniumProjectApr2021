@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="88" started-at="2021-04-08T04:56:42Z" finished-at="2021-04-08T04:56:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="88" started-at="2021-04-08T04:56:42Z" finished-at="2021-04-08T04:56:42Z">
+      <class name="testngPack.testngExample2">
+        <test-method status="PASS" signature="Login()[pri:0, instance:testngPack.testngExample2@3930015a]" name="Login" duration-ms="30" started-at="2021-04-08T10:26:42Z" finished-at="2021-04-08T10:26:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="AccountEnquiry()[pri:0, instance:testngPack.testngExample2@3930015a]" name="AccountEnquiry" duration-ms="1" started-at="2021-04-08T10:26:42Z" finished-at="2021-04-08T10:26:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AccountEnquiry -->
+        <test-method status="PASS" signature="FundTransfer()[pri:0, instance:testngPack.testngExample2@3930015a]" name="FundTransfer" duration-ms="1" started-at="2021-04-08T10:26:42Z" finished-at="2021-04-08T10:26:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FundTransfer -->
+        <test-method status="PASS" signature="LogOff()[pri:0, instance:testngPack.testngExample2@3930015a]" name="LogOff" duration-ms="1" started-at="2021-04-08T10:26:42Z" finished-at="2021-04-08T10:26:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogOff -->
+      </class> <!-- testngPack.testngExample2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

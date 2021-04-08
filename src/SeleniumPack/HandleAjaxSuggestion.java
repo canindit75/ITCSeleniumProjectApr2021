@@ -20,7 +20,7 @@ public class HandleAjaxSuggestion {
 		String alertMesg = null;
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("https://www.google.com/");
+		driver.get("https://www.google.com/");	
 		driver.manage().window().maximize();
 		driver.findElement(By.name("q")).sendKeys("s");
 		WebDriverWait wait = new WebDriverWait(driver,30);
