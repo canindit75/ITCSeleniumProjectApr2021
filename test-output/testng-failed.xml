@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testngPack.CalorieCalculatorTestCase">
+      <class name="com.itc.calc.testcases.CalorieCalculatorPageTestCase">
         <methods>
           <include name="EnterCalorieDetails"/>
-          <include name="LaunchBrowser"/>
-          <include name="CloseBrowser"/>
         </methods>
-      </class> <!-- testngPack.CalorieCalculatorTestCase -->
+      </class> <!-- com.itc.calc.testcases.CalorieCalculatorPageTestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
