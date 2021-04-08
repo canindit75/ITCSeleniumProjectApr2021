@@ -1,22 +1,28 @@
 package testngPack;
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class CalorieCalculatorTestCase {
-	WebDriver driver = null;
-	@Test
-	public void EnterCalorieDetails() throws InterruptedException{
+	public static WebDriver driver = null;
+	@BeforeMethod
+	public void LaunchBrowser(){
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		 driver = new ChromeDriver();
 		 driver.get("https://www.calculator.net/calorie-calculator.html");
-		 driver.manage().window().maximize();
-		 
+		 driver.manage().window().maximize();		
+	}
+	@Test
+	public void EnterCalorieDetails() throws InterruptedException{
+
 		// WebElement ageTextbox = driver.findElement(By.id("cage"));
-		 WebElement ageTextbox = driver.findElement(By.xpath("//*[@id='cage']"));
+		 WebElement ageTextbox = driver.findElement(By.id("cage"));
 		 ageTextbox.clear();
 		 ageTextbox.sendKeys("45");
 		 System.out.println("id value of ageTextbox = " +ageTextbox.getAttribute("id"));
@@ -40,6 +46,10 @@ public class CalorieCalculatorTestCase {
 				 }
 			 }
 		 }
+		 
+ 	}
+	@Test
+	public void ExtractWebTable(){
 		 WebElement table = driver.findElement(By.className("cinfoT"));
 		 List<WebElement> rows =  table.findElements(By.tagName("tr"));
 		 for(WebElement row : rows){
@@ -49,9 +59,17 @@ public class CalorieCalculatorTestCase {
 			 }
 		  System.out.print("\n");	 
 		 }
-		 
+
+	}
+	@AfterMethod
+	public void CloseBrowser() throws InterruptedException{
 		 Thread.sleep(3000);
-		 driver.close();
- 	}
+		if(driver!=null)
+		{
+			 //driver.close(); //close the current active window
+			 driver.quit(); //closes all browsers opened via script
+
+		}
+	}
 }
 

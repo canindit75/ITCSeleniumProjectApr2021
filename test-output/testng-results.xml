@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="23753" started-at="2021-04-08T05:35:51Z" finished-at="2021-04-08T05:36:15Z">
+  <suite name="Default suite" duration-ms="27940" started-at="2021-04-08T06:22:08Z" finished-at="2021-04-08T06:22:36Z">
     <groups>
     </groups>
-    <test name="Regression Suite" duration-ms="23753" started-at="2021-04-08T05:35:51Z" finished-at="2021-04-08T05:36:15Z">
-      <class name="testngPack.testngExample">
-        <test-method status="PASS" signature="testngmethod()[pri:0, instance:testngPack.testngExample@18bf3d14]" name="testngmethod" duration-ms="17" started-at="2021-04-08T11:05:51Z" finished-at="2021-04-08T11:05:51Z">
+    <test name="Default test" duration-ms="27940" started-at="2021-04-08T06:22:08Z" finished-at="2021-04-08T06:22:36Z">
+      <class name="testngPack.CalorieCalculatorTestCase">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="LaunchBrowser" is-config="true" duration-ms="6163" started-at="2021-04-08T11:52:08Z" finished-at="2021-04-08T11:52:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testngmethod -->
-      </class> <!-- testngPack.testngExample -->
-      <class name="testngPack.CalorieCalculatorTestCase">
-        <test-method status="PASS" signature="EnterCalorieDetails()[pri:0, instance:testngPack.CalorieCalculatorTestCase@3578436e]" name="EnterCalorieDetails" duration-ms="23703" started-at="2021-04-08T11:05:51Z" finished-at="2021-04-08T11:06:15Z">
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="EnterCalorieDetails()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="EnterCalorieDetails" duration-ms="1272" started-at="2021-04-08T11:52:14Z" finished-at="2021-04-08T11:52:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="CloseBrowser" is-config="true" duration-ms="4358" started-at="2021-04-08T11:52:16Z" finished-at="2021-04-08T11:52:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="LaunchBrowser" is-config="true" duration-ms="5202" started-at="2021-04-08T11:52:20Z" finished-at="2021-04-08T11:52:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="ExtractWebTable()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="ExtractWebTable" duration-ms="6915" started-at="2021-04-08T11:52:25Z" finished-at="2021-04-08T11:52:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExtractWebTable -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="CloseBrowser" is-config="true" duration-ms="4007" started-at="2021-04-08T11:52:32Z" finished-at="2021-04-08T11:52:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
       </class> <!-- testngPack.CalorieCalculatorTestCase -->
-      <class name="testngPack.testngExample2">
-        <test-method status="PASS" signature="Login()[pri:0, instance:testngPack.testngExample2@2eda0940]" name="Login" duration-ms="2" started-at="2021-04-08T11:05:51Z" finished-at="2021-04-08T11:05:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="AccountEnquiry()[pri:0, instance:testngPack.testngExample2@2eda0940]" name="AccountEnquiry" duration-ms="1" started-at="2021-04-08T11:06:15Z" finished-at="2021-04-08T11:06:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AccountEnquiry -->
-        <test-method status="PASS" signature="FundTransfer()[pri:0, instance:testngPack.testngExample2@2eda0940]" name="FundTransfer" duration-ms="1" started-at="2021-04-08T11:06:15Z" finished-at="2021-04-08T11:06:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FundTransfer -->
-        <test-method status="PASS" signature="LogOff()[pri:0, instance:testngPack.testngExample2@2eda0940]" name="LogOff" duration-ms="1" started-at="2021-04-08T11:06:15Z" finished-at="2021-04-08T11:06:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogOff -->
-      </class> <!-- testngPack.testngExample2 -->
-    </test> <!-- Regression Suite -->
-  </suite> <!-- Suite1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
