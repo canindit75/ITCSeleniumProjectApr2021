@@ -6,24 +6,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-public class CaloriePage {
+import org.openqa.selenium.support.PageFactory;
+public class CaloriePage1 {
 	
-
+	@FindBy(id="cage")
 	public WebElement ageTextbox;
+	
+	@FindBy(name="csex")
 	public List<WebElement> genderList;
 	
+	@FindBy(linkText="BMI")
+	public WebElement BMILink;
 	
 	public WebDriver driver;
 	
-	
-	public CaloriePage(WebDriver driver){
+	public CaloriePage1(WebDriver driver){
 		this.driver = driver;
+		//PageFactory.initElements(driver, this);
 	}
 	public void EnterCalorieDetails(String age, String sex){
-		ageTextbox = driver.findElement(By.id("cage"));
 		ageTextbox.clear();
 		ageTextbox.sendKeys(age);
-		List<WebElement> genderList = driver.findElements(By.xpath("//*[@name='csex']"));
 		if(genderList.size()>0){
 			 for(WebElement gender : genderList){
 				 if(gender.getAttribute("value").equals(sex)){
@@ -34,5 +37,10 @@ public class CaloriePage {
 				 }
 			 }
 		 }
+	}
+	
+	public BMIPage BMILinkClick(){
+		BMILink.click();
+		return new BMIPage(driver);
 	}
 }
