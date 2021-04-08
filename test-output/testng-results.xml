@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15632" started-at="2021-04-08T08:38:19Z" finished-at="2021-04-08T08:38:34Z">
+  <suite name="Default suite" duration-ms="78642" started-at="2021-04-08T10:06:56Z" finished-at="2021-04-08T10:08:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15632" started-at="2021-04-08T08:38:19Z" finished-at="2021-04-08T08:38:34Z">
-      <class name="com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase">
-        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="LaunchBrowser" is-config="true" duration-ms="6745" started-at="2021-04-08T14:08:19Z" finished-at="2021-04-08T14:08:25Z">
+    <test name="Default test" duration-ms="78642" started-at="2021-04-08T10:06:56Z" finished-at="2021-04-08T10:08:15Z">
+      <class name="com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase@2aafb23c]" name="LaunchBrowser" is-config="true" duration-ms="18760" started-at="2021-04-08T15:36:56Z" finished-at="2021-04-08T15:37:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchBrowser -->
-        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1909" started-at="2021-04-08T14:08:25Z" data-provider="getCalorieData" finished-at="2021-04-08T14:08:27Z">
+        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase@2aafb23c]" name="EnterCalorieDetails" duration-ms="1634" started-at="2021-04-08T15:37:48Z" data-provider="getCalorieData" finished-at="2021-04-08T15:37:50Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1298" started-at="2021-04-08T14:08:27Z" data-provider="getCalorieData" finished-at="2021-04-08T14:08:29Z">
+        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase@2aafb23c]" name="EnterCalorieDetails" duration-ms="1256" started-at="2021-04-08T15:37:50Z" data-provider="getCalorieData" finished-at="2021-04-08T15:37:51Z">
           <params>
             <param index="0">
               <value>
@@ -33,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1246" started-at="2021-04-08T14:08:29Z" data-provider="getCalorieData" finished-at="2021-04-08T14:08:30Z">
+        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase@2aafb23c]" name="EnterCalorieDetails" duration-ms="1268" started-at="2021-04-08T15:37:51Z" data-provider="getCalorieData" finished-at="2021-04-08T15:37:52Z">
           <params>
             <param index="0">
               <value>
@@ -44,11 +44,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="CloseBrowser" is-config="true" duration-ms="4401" started-at="2021-04-08T14:08:30Z" finished-at="2021-04-08T14:08:34Z">
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase@2aafb23c]" name="CloseBrowser" is-config="true" duration-ms="22553" started-at="2021-04-08T15:37:52Z" finished-at="2021-04-08T15:38:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-      </class> <!-- com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase -->
+      </class> <!-- com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

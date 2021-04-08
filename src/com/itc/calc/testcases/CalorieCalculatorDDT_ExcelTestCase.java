@@ -1,4 +1,5 @@
 package com.itc.calc.testcases;
+import java.io.IOException;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -10,7 +11,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-public class CalorieCalculatorDDT_HTTestCase {
+
+import com.itc.calc.utilities.ExcelReader;
+public class CalorieCalculatorDDT_ExcelTestCase {
 	public static WebDriver driver = null;
 	
 	@BeforeClass
@@ -41,7 +44,7 @@ public class CalorieCalculatorDDT_HTTestCase {
  	}
 	
 	@DataProvider
-	public Object[][] getCalorieData(){
+	public Object[][] getCalorieData() throws IOException{
 		//String[][] data = new String[3][2];
 		//3 data sets - each with age and gender
 /*		data[0][0] = "45";
@@ -52,7 +55,7 @@ public class CalorieCalculatorDDT_HTTestCase {
 		data[2][1] = "f";
 		return data;
 */		
-		Object[][] data = new Object[3][1]; 
+/*		Object[][] data = new Object[3][1]; 
 		Hashtable<String,String> rec1 = new Hashtable<String,String>();
 		rec1.put("age", "45");
 		rec1.put("sex", "f");
@@ -71,6 +74,12 @@ public class CalorieCalculatorDDT_HTTestCase {
 		
 		data[2][0] = rec3;
 		return data;
+*/	
+		String filepath  = System.getProperty("user.dir") +"/src/com/itc/calc/testdata";
+		String filename = "CalorieTestDataSet.xlsx";
+		String sheetname = "CalorieData";
+		System.out.println("filepath = " + filepath);
+		return ExcelReader.ReadFromExcelToObjArr(filepath, filename, sheetname);
 	}
 	
 	@AfterClass
