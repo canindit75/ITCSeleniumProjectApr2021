@@ -2,36 +2,28 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27940" started-at="2021-04-08T06:22:08Z" finished-at="2021-04-08T06:22:36Z">
+  <suite name="Default suite" duration-ms="20253" started-at="2021-04-08T06:37:11Z" finished-at="2021-04-08T06:37:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27940" started-at="2021-04-08T06:22:08Z" finished-at="2021-04-08T06:22:36Z">
-      <class name="testngPack.CalorieCalculatorTestCase">
-        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="LaunchBrowser" is-config="true" duration-ms="6163" started-at="2021-04-08T11:52:08Z" finished-at="2021-04-08T11:52:14Z">
+    <test name="Default test" duration-ms="20253" started-at="2021-04-08T06:37:11Z" finished-at="2021-04-08T06:37:31Z">
+      <class name="testngPack.CalorieCalculatorTestCase2">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase2@483bf400]" name="LaunchBrowser" is-config="true" duration-ms="6203" started-at="2021-04-08T12:07:11Z" finished-at="2021-04-08T12:07:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchBrowser -->
-        <test-method status="PASS" signature="EnterCalorieDetails()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="EnterCalorieDetails" duration-ms="1272" started-at="2021-04-08T11:52:14Z" finished-at="2021-04-08T11:52:16Z">
+        <test-method status="PASS" signature="EnterCalorieDetails()[pri:0, instance:testngPack.CalorieCalculatorTestCase2@483bf400]" name="EnterCalorieDetails" duration-ms="1305" started-at="2021-04-08T12:07:17Z" finished-at="2021-04-08T12:07:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="CloseBrowser" is-config="true" duration-ms="4358" started-at="2021-04-08T11:52:16Z" finished-at="2021-04-08T11:52:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CloseBrowser -->
-        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="LaunchBrowser" is-config="true" duration-ms="5202" started-at="2021-04-08T11:52:20Z" finished-at="2021-04-08T11:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LaunchBrowser -->
-        <test-method status="PASS" signature="ExtractWebTable()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="ExtractWebTable" duration-ms="6915" started-at="2021-04-08T11:52:25Z" finished-at="2021-04-08T11:52:32Z">
+        <test-method status="PASS" signature="ExtractWebTable()[pri:0, instance:testngPack.CalorieCalculatorTestCase2@483bf400]" name="ExtractWebTable" duration-ms="8453" started-at="2021-04-08T12:07:18Z" finished-at="2021-04-08T12:07:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExtractWebTable -->
-        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase@77f03bb1]" name="CloseBrowser" is-config="true" duration-ms="4007" started-at="2021-04-08T11:52:32Z" finished-at="2021-04-08T11:52:36Z">
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:testngPack.CalorieCalculatorTestCase2@483bf400]" name="CloseBrowser" is-config="true" duration-ms="4274" started-at="2021-04-08T12:07:27Z" finished-at="2021-04-08T12:07:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-      </class> <!-- testngPack.CalorieCalculatorTestCase -->
+      </class> <!-- testngPack.CalorieCalculatorTestCase2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

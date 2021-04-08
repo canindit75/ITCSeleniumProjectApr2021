@@ -5,13 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CalorieCalculatorTestCase {
+public class CalorieCalculatorTestCase2 {
 	public static WebDriver driver = null;
-	@BeforeMethod
+	
+	@BeforeClass
 	public void LaunchBrowser(){
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		 driver = new ChromeDriver();
@@ -60,7 +61,7 @@ public class CalorieCalculatorTestCase {
 		 }
 
 	}
-	@AfterMethod
+	@AfterClass
 	public void CloseBrowser() throws InterruptedException{
 		 Thread.sleep(3000);
 		if(driver!=null)
