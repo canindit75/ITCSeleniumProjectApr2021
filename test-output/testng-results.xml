@@ -2,68 +2,53 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15762" started-at="2021-04-08T07:06:33Z" finished-at="2021-04-08T07:06:49Z">
+  <suite name="Default suite" duration-ms="15632" started-at="2021-04-08T08:38:19Z" finished-at="2021-04-08T08:38:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15762" started-at="2021-04-08T07:06:33Z" finished-at="2021-04-08T07:06:49Z">
-      <class name="com.itc.calc.testcases.CalorieCalculatorDDTTestCase">
-        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDTTestCase@25618e91]" name="LaunchBrowser" is-config="true" duration-ms="6433" started-at="2021-04-08T12:36:33Z" finished-at="2021-04-08T12:36:40Z">
+    <test name="Default test" duration-ms="15632" started-at="2021-04-08T08:38:19Z" finished-at="2021-04-08T08:38:34Z">
+      <class name="com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="LaunchBrowser" is-config="true" duration-ms="6745" started-at="2021-04-08T14:08:19Z" finished-at="2021-04-08T14:08:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchBrowser -->
-        <test-method status="PASS" signature="EnterCalorieDetails(java.lang.String, java.lang.String)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="2202" started-at="2021-04-08T12:36:40Z" data-provider="getCalorieData" finished-at="2021-04-08T12:36:42Z">
+        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1909" started-at="2021-04-08T14:08:25Z" data-provider="getCalorieData" finished-at="2021-04-08T14:08:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[45]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[f]]>
+                <![CDATA[{age=45, sex=f}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="EnterCalorieDetails(java.lang.String, java.lang.String)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1310" started-at="2021-04-08T12:36:42Z" data-provider="getCalorieData" finished-at="2021-04-08T12:36:43Z">
+        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1298" started-at="2021-04-08T14:08:27Z" data-provider="getCalorieData" finished-at="2021-04-08T14:08:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[56]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[m]]>
+                <![CDATA[{age=56, sex=m}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="EnterCalorieDetails(java.lang.String, java.lang.String)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1292" started-at="2021-04-08T12:36:43Z" data-provider="getCalorieData" finished-at="2021-04-08T12:36:45Z">
+        <test-method status="PASS" signature="EnterCalorieDetails(java.util.Hashtable)[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="EnterCalorieDetails" duration-ms="1246" started-at="2021-04-08T14:08:29Z" data-provider="getCalorieData" finished-at="2021-04-08T14:08:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[67]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[f]]>
+                <![CDATA[{age=67, sex=f}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterCalorieDetails -->
-        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDTTestCase@25618e91]" name="CloseBrowser" is-config="true" duration-ms="4484" started-at="2021-04-08T12:36:45Z" finished-at="2021-04-08T12:36:49Z">
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase@25618e91]" name="CloseBrowser" is-config="true" duration-ms="4401" started-at="2021-04-08T14:08:30Z" finished-at="2021-04-08T14:08:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-      </class> <!-- com.itc.calc.testcases.CalorieCalculatorDDTTestCase -->
+      </class> <!-- com.itc.calc.testcases.CalorieCalculatorDDT_HTTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
