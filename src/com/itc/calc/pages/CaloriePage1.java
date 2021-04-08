@@ -7,12 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.itc.calc.objectmap.ObjectRepos;
 public class CaloriePage1 {
 	
-	@FindBy(id="cage")
+	//@FindBy(id="cage")
+	@FindBy(id=ObjectRepos.cp_ageTextboxById)
 	public WebElement ageTextbox;
 	
-	@FindBy(name="csex")
+	//@FindBy(name="csex")
+	@FindBy(name=ObjectRepos.cp_genderListByname)
 	public List<WebElement> genderList;
 	
 	@FindBy(linkText="BMI")
