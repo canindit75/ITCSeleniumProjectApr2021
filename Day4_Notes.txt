@@ -1,0 +1,304 @@
+Github link 
+===========
+https://github.com/canindit75/ITCSeleniumProjectApr2021
+
+
+Day3 - Recording Video
+======================
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/Ee4q5hmgy3pInZQxEgwsZbUBV1upyCIIFDc9Qg3qOBMkDA
+
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/Eb_1UaEO9cRDsreqsoUvNkQBCFVBNgeSa4IXT7HbDzjnaw
+
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EUGZ-yb2_p5FjRmMakMU9icBjs6ttC3wSxcbeUrZ4Psqpw
+
+1.TestNG Framework 
+ 1)Install TestNG
+ 2)How to write testcases using TestNG framework
+ 3)How to run TestSuite using testng.xml
+ 4)Different Annotations in TestNG
+
+2.Data Driven Test Cases
+  1)Data Driven or Parameterized TestCase 
+  2)Create Package Structure for framework development
+  3)How to read data from Excel and pass it to TestNG TestCase
+  4)How to create and read from a config file
+  5)Object Repository Maintenance
+
+3.Page Object Model Implementation with Page Factory
+  1) Page Object Model Implementation with / with out Page Factory
+
+Installing TestNG
+=================
+1.Launch Eclipse
+
+2.Go to Help Menu and Select Eclipse Marketplace and search on testng and Click on Enter- It appears in the Search Results - Select Intall corresponding to TestNG
+> Select TestNG (required) > Click on Confirm > Click on Confirm > Click on I accept > Click on Finish button > Click on OK to the Security Warning > Click on Yes to Restart Eclipse for changes to take effect 
+
+3.To Check TestNG is installed 
+Select Project > Right Click > Build Path > Configure Build Path > Click on Libraries Tab > Click on Add Library > Select TestNG > Click on Next and Finish button to the reference TestNG Library to the Project
+
+4.create a package and name it testngPack
+
+5.Create a class with testngExample.java - all this while we were using 
+public static void main(String[] args) for writing testcases and running as JAVA Application - we are going to start using TestNG framework
+
+TestNG framework is unit testing framework developed in java and is used to develop Regression Suites - It ofcourse provides many features which we look at one by one
+
+To run any method as a testng test case, the minimum requirement is to mark it with @Test annotation. when we mark a method with @Test, we run the method as a TestNG test 
+
+Write the below functionalities as 4 testng testcases - for each of them, we crate a non static method and marked them with @Test annotation
+
+1.Login
+2.Account Enquiry
+3.Fund Transfer
+4.LogOff
+
+When we run the above methods marked with @Test annotation, it runs in alphabetical order - first it ran the test method 
+AccountTransfer > FundTransfer > ,LogOff > Login 
+This is not a proper to run the above functionalities
+To fix the order of execution, to make sure the testng testmethods run in proper order - we can use the property priority - the method marked with lowest priority runs first and method marked with highest priority runs last
+
+TestNG automatically generates a testng report in html format in test-output folder of Project Directory 
+Refresh the project to check the SeleniumProject/test-output and Select index.html and open with Browser to check to Report
+
+How to run testng testcase as a suite?
+1.create a testng.xml file 
+2.specify the testng testcases that you would like to run as a suite
+3.Run the TestSuite 
+
+Step1 - Creating a testng.xml file
+Select Project > Right Click Select Other > Expand General > Select file > Specify Filename as testng.xml and Click on Next and Finish button - this will create an empty testng.xml file at the Project directory
+
+Step2 - double click on testng.xml and Go to the Source tab
+Lets pick a template of testng.xml from the official website of testng
+Go to testng.org 
+Click on Documentation 
+Click on Point 3 - testng.xml
+Make a copy of testng.xml template and paste it in the Source tab of testng.xml of the Project in Eclipse IDE
+
+Sample Contents of testng.xml as in official website of testng
+==============================================================
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" >
+  <test name="Nopackage" >
+    <classes>
+       <class name="NoPackageTest" />
+    </classes>
+  </test>
+ 
+  <test name="Regression1">
+    <classes>
+      <class name="test.sample.ParameterSample"/>
+      <class name="test.sample.ParameterTest"/>
+    </classes>
+  </test>
+</suite>
+
+in the class names, we need to specify the fully qualified name 
+we have created our testng testcases in testngPack and in classes 
+named testngExample and testngExample1
+To Run a TestNG suite, Select testng.xml and Run As TestNG Suite 
+
+Error while running testng.xml - 
+org.testng.TestNGException: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+Creating a testng testcase EnterCalorieDetails
+==============================================
+1.create a class  with name CalorieCalculatorTestCase.java
+2.create a test method EnterCalorieDetails and mark it with @Test
+@Test
+public void EnterCalorieDetails(){
+}
+3.Import testng package
+4.Copy the code from SeleniumPack/LocateElementByIdNameClass.java
+and paste it in the EnterCalorieDetails method 
+5.remove the static keyword from WebDriver declaration since, we are
+non static methods 
+
+We can split the testng testcase into 3 parts
+LaunchBrowser To run this method before the actual testcase run - we need to mark as with @BeforeMethod
+EnterCalorieDetails  @Test
+CloseBrowser this needs to be run after testng testcase and thus marked with @AfterMethod annotation
+
+@BeforeMethod run before every testng testcase is run - This acts as Pre-Condition
+@AfterMethod annotation run after every testng testcase is run - This acts as Post Condition
+
+I can write the method in any order - The order of execution is decided by the annotations marked to it 
+
+Note :if I put two tests on same priority , alphabetical order takes precedence in such case.
+
+For Example, in case I want to launch browser and navigate to the url only once and run all testng testcases and then close the browser
+Then, we will mark
+LaunchBrowser method with @BeforeClass annotation - run onetime at/before executing all testng testcases in the class
+EnterCalorieDetails
+ExtractWebTable
+CloseBrowser method with @AfterClass annotation - run onetime after executing all testng testcases in the class
+
+Lets create a package structure for the project
+===============================================
+Step 1 - 
+Lets define the packages 
+com.itc.calc.testcases
+com.itc.calc.testdata
+com.itc.calc.config
+com.itc.calc.pages
+com.itc.calc.utilities
+com.itc.calc.objectmap
+
+Step 2 -
+Make a copy of the testngPack/CalorieCalculatorTestCase2.java and paste it in
+com.itc.calc.testcases 
+Select the com.itc.calc.testcases/CalorieCalculatorTestCase2.java
+and Right Click > Select Refactor > Rename and Specify the name
+CalorieCalculatorDDTTestCase.java
+
+Step 3 - Removed all print and comment testcases and also deleted the testng method
+ExtractWebTable
+
+Step 4 - 
+Parameterization using TestNG
+==============================
+1.write a method which returns test data for the testng testcase - testdata in the testng is return as a 2 dimensional object array
+public Object[][] getCalorieData(){
+   
+}
+
+2.To mark the method getCalorieData as a provider of test data for a testng testcase, mark the method with @DataProvider and import the package
+@DataProvider
+public Object[][] getCalorieData(){
+
+}
+
+3.To pass the testdata to the testng testcase - in the testng testcase - specify the name of the method that provides the test data
+@Test(dataProvider="getCalorieData")
+public void EnterCalorieDetails(){
+
+}
+
+4.Now, to place the test data for EnterCalorieDetails in 2 dimenstional object array and return it to the testng testcase
+
+Lets populate 3 test data sets 
+age sex
+45   f
+56   m
+ 67  f
+
+Each data set contains 2 columns and data type of the column is String
+Thus pass to the testng testcase , 2 arguments of type String in sequence as the data assigned - age and second sex 
+
+@Test(dataProvider="getCalorieData")
+public void EnterCalorieDetails(String age, String sex){
+
+}
+
+How to place the same test data in hashtable and pass it to the testcase
+
+Lets populate 3 test data sets in hashtable
+age sex
+45   f
+56   m
+ 67  f
+    c1
+r1  rec1
+r2  rec2
+r3  rec3
+
+data type was 2 columns of type String in case of array 
+data type is 1 column of type hashtable 
+
+Place data in Excel, Read from Excel and Pass it to the TestnG TestCase via Data Provider Method
+================================================================================
+1. Creating a test data file in com.itc.calc.testdata
+FileName:CalorieTestDataSet.xlsx
+SheetName:CalorieData
+
+2.Created the test data
+age sex
+'45   f
+'56   m
+'67   f
+
+To maintain the data in string format, i have placed single quote before the numbers to convert it to string
+Save the file
+
+2.Download, Extract and Reference Apache-poi-bin-3.16.zip 
+Go to this url
+https://archive.apache.org/dist/poi/release/bin/
+Download  poi-bin-3.16-20170419.zip  
+Extract to poi-bin-3.16-20170419\
+a)There is the main folder named poi-3.16 - reference the jars in the folder
+b)reference the jars from folder poi-3.16/lib
+c)reference the jars from folder poi-3.16/ooxml-lib
+
+3.Now, we will create a class file named ExcelReader.java in com.itc.calc.utilities
+a)read from the excel file and print the data to the console
+b)read from excel and place the test data in 2 dimensional object array
+
+age sex  <---- header row getRow(0) <--- keys row
+'45  f  <--- data row 1
+'56  m  <--- data row 2
+'67  f  <--- data row 3
+
+
+1)Write a method to read from excel and place the test data in 2 dimensional object array ExcelReader.ReadFromExcelToObjArr
+
+2)Modify the getCalorieData method in class CalorieCalculatorDDT_ExcelTestCase
+
+		String filepath  = System.getProperty("user.dir") +"/src/com/itc/calc/testdata";
+		String filename = "CalorieTestDataSet.xlsx";
+		String sheetname = "CalorieData";
+		System.out.println("filepath = " + filepath);
+		return ExcelReader.ReadFromExcelToObjArr(filepath, filename, sheetname);
+3)Run the testng testcase and check the results
+
+- Page Object Model Implementation
+- Read from Config File
+- Object Repository Maintenance
+
+Page Object Model Implementation
+=================================
+When we implement POM - it makes code maintenance easier
+As of now, when we are writing our testcases - testcase is directly interacting with application web page elements
+In Page Object Model, for each page, create page class in the package
+com.itc.calc.pages and maintain pagewise elements and behavior 
+The advantage of doing this - the testcase will now not directly with the application web page elements - it will do only via page class object instance
+
+Test case ==> application web elements
+TestCase ===> Page Class Object Instance ===> accessing methods and properties
+
+Now, in case any property or behavior undergoes changes w.r.t page - all you have to do is go to the page class - update and it will take effect for all the testcases which makes use Page class object instantiation for accessing properties and methods 
+
+1.lets create 2 page classes
+CaloriePage and BMIPage
+
+
+Page Object Model with PageFactory implementation
+=================================================
+1.we will identify elements using @FindBy annotation in the page class
+2.we will use PageFactory.initElements to perform Lazy Initialization of elements in the constructor
+PageFactory.initElements(driver, this);
+3.for PageFactory mode implementation, we need to identify using @FindBy annotation
+
+Reading from a config file
+==========================
+1.Create file config.properties in com.itc.calc.config package [just like testng.xml]
+2.Define the environment settings 
+appurl, browsertype, chromedriverpath 
+3.create a class named PropertyReader.java in com.itc.calc.utilites package
+write a program to read from the config file and specify the property name and return property value
+
+This same approach can be used for object repository maintenace
+or alternatively we can create a class for Environment Settings as well as Object Map
+
+
+Tomorrow's list of tasks
+1.Extent Reporting
+2.Maven Project Creation
+3.Selenium Grid
+4.Jenkins
+
+

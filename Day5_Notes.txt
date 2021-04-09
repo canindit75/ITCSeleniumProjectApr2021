@@ -1,0 +1,382 @@
+Day 4 - Recording Video
+=======================
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EYyh3Jy2LRVNkiTRBYa_iqYBN6pCqtwf8qyzVy1MW02ZMQ
+
+1.Extent Reporting - Third Party Reporting Tool
+2.MavenProject - Build Management Tool 
+3.Selenium Grid - Parallel or distribution or Remote execution or Multiple Env
+4.Integration with Jenkins - Build Deployment
+
+
+Capturing Screenshots
+======================
+1.Download, Extract and reference Apache-common-io-2.6-bin jars to the Project
+
+Steps to download - Go to the URL https://commons.apache.org/proper/commons-io/download_io.cgi and Download the commons-io-2.8.0-bin.zip jar
+
+2.Go to the testngPack and create a class file named 
+CaptureScreenshot
+
+Some more Annotations of TestNG
+================================
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" > <--- @BeforeSuite
+  <test name="Regression Suite"> <<--- @BeforeTest
+    <classes>
+      <class name="testngPack.testngExample"/> @BeforeClass  @AfterClass
+      <class name="testngPack.testngExample2"/>
+      <class name="testngPack.CalorieCalculatorTestCase"/>
+    </classes>
+  </test> <--- @AfterTest
+</suite> <--- @AfterSuite
+
+@BeforeClass @BeforeMethod @Test @AfterMethod @AfterClass
+@BeforeSuite @BeforeTest @AfterTest @AfterSuite
+
+If you see the testng.xml file, you will notice there is an opening and closing tag
+opening tag of <suite> represents @BeforeSuite
+closing tag of </suite> represents @AfterSuite
+
+Normally these are there to be used when you have a Suite level configuration, Test Pack level configuration or after the execution of the test or suite level configuration, you have some reporting activities
+
+Extent Reporting
+================
+1.Download the below jars bson-2.3.jar, freemarker-2.3.29.jar, extentreports-4.0.6.jar
+
+https://mvnrepository.com/artifact/org.mongodb/bson/2.3
+https://mvnrepository.com/artifact/org.freemarker/freemarker/2.3.29
+https://mvnrepository.com/artifact/com.aventstack/extentreports/4.0.6
+Click on the jar file on each of the links to download the corresponding jar
+
+2.Reference all the jars in the Project
+
+3.Paste the ExtentReportsClass.java in the testngPack package
+
+4.First we will see how the report looks and where it is generated?
+<ProjectDir>/test-output/STMExtentReport.html
+
+5.I will modify the path of the chromedriver.exe because we have placed it in drivers and in the code, it is in Resources folder
+
+6.Run the ExtentReportsClass.java and Go to test-output folder and check for the html file
+
+There are 5/6 methods
+1.startReport which is marked with @BeforeTest - This is used setting config for report
+2,5.LaunchBrowser @BeforeMethod - for each test, it will launch browser
+3.VerifyTitle @Test - first test
+6.VerifyAgeTextBoxIsPresent @Test - second test
+4,7.CloseBrowser @AfterMethod - for each test, it will close the browser
+8.stopReport @AfterTest - generate the report 
+
+startReport -
+There are 3 Things
+ExtentHtmlReporter <-- This comprises of Extent HTML Reports
+ExtentReports <-- Test Report comprising of ExtentTest TestCases 
+ExtentTest <-- TestCase 
+1)Creating an instance of the ExtentHTMLReporter and as an argument - specify the location where you would like to generate the report
+
+What is the difference between ExtentReport and ExtentHTMLReporter - generating the HTML Report
+
+ExtentTest are attached to ExtentReport <--- HtmlReporter
+
+ExtentReports is the main to which ExtentHTMLReporter gets attached
+specifying the configuration for ExtentReports 
+
+This can be seen in Dashboard in the bottom section
+
+1.After each Test, CloseBrowser marked with @AfterMethod is executed
+2.This testcase is going to check for the TestCase Status and log the Result
+
+ExtentTest logger = extent.CreateTest("TestCaseName");
+logger.log("Status","Label","Color");
+
+result.getName() returns the method name of the test
+
+MavenProject Creation
+=====================
+Maven is a Build Management Tool 
+Maven can help us in command line execution of test suite
+Maven helps to make sure all the team mates are working on the same version of the dependencies 
+Maven has a pom.xml which has all the configurations related to the project
+1.dependencies
+2.properties
+3.compiler + executable
+4.plugins for compiling, executing, reporting 
+
+1.Create Maven Project
+Select File Menu > New > MavenProject 
+or 
+Select File Menu > New > Other > Maven > MavenProject
+Make sure to create the MavenProject in the Selenium_Workspace
+F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace
+
+Select org.apache.maven.archetypes | maven-archetype-quickstart | 1.1
+Click on Next button
+Specify the GroupId
+Specify the ArtifactId
+GroupId - default package name - com.itc
+ArtifactId - Projectname - MavenProject
+Package becomes com.itc.MavenProject
+
+Click on Finish button
+
+Go to Help Menu > Install New Software
+http://download.eclipse.org/technology/m2e/releases
+
+MavenProject
+ src/main/java <--- dev code
+   com.itc.MavenProject
+      App.java
+ src/test/java <--- test code
+   com.itc.MavenProject
+     AppTest.java
+ JRE 1.5  
+ Maven Dependencies <-- dependencies
+ target/classes/ <- compiled dev code from src/main/java
+ target/test-classes <- compiled test code from src/test/java
+ pom.xml <-- has all the configuration related to the project
+
+To differentiat from a Normal Java Project
+SeleniumProject
+ src <- source code - both dev and test code
+ bin <- compiled code of src
+ JDK 
+
+1.Delete the default packages and create new package in 
+src/test/java package name => com.itc.calc.testcases
+
+2.Specify the dependencies in the project
+1.selenium-java-3.14.0
+2.testng-6.14.3
+3.poi 3.16 jars
+4.common-io 2.6 jars
+
+Go to Maven Central Repository and get the dependencies for the above jars
+https://mvnrepository.com/repos/central
+1.Search for selenium java
+Click on first link
+Click on 3.14.0
+Go to Maven tab at the bottom and copy the maven dependency
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.14.0</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.14.3</version>
+    <scope>test</scope>
+</dependency>
+
+apache poi jars 
+poi-3.16
+poi-ooxml
+poi-ooxml-schemas
+
+Specifying the dependencies and clicking on Save - it will download the dependencies from the Maven central repository and place it in the Maven Local Repository - Maven Local Repository is available C:\Users\<<AccountName>>\.m2\repository and from the local repository, it is referenced in the MavenProject
+
+Dependencies referenced in the project 
+There are a default package created during project creation
+
+4. Create a testng.xml file at the Project directory path and place the testng testcases tht needs to be executed 
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" >
+  <test name="Maven Calorie Calculator Suite">
+    <classes>
+      <class name="com.itc.calc.testcases.CalorieCalculatorDDT_ExcelTestCase"/>
+      <class name="com.itc.calc.testcases.CalorieCalculatorPageTestCase"/>
+      <class name="com.itc.calc.testcases.CaptureScreenshot"/>
+    </classes>
+  </test>
+</suite>
+
+5.Add 2 plugins in the pom.xml - compiler plugin an surefire plugin 
+we also need to include in pom.xml - the testng.xml 
+pom.xml --> testng.xml --> execute all the testng testcases
+
+   
+6.Specified testng.xml as a property
+<suiteXmlFile>testng.xml</suiteXmlFile>
+If i have get the file name ${suiteXmlFile} ==> testng.xml --> this file needs to be in project directory
+
+7.Update MavenProject 
+Select the MavenProject > RIght Click > Select Maven > Update Project
+Select Offline and Force Update
+
+8.RUn the Project 
+Select MavenProject > Right Click > Run as Maven Test
+or Select pom.xml > Right Click > Run as Maven Test
+
+9.Select MavenProject > Right Click > Go to Build Path > Configure Build Path
+Select TestNG tag and uncheck use project TestNG.jar
+
+10. make a copy of drivers folder from normal project and paste it in MavenProject
+
+To Run MavenProject from Commandline
+Download Apache Maven 3.6.3
+Setup the Maven Environment just like Java
+1.Create a System Variable named
+MAVEN_HOME=F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Softwares\apache-maven-3.8.1-bin\apache-maven-3.8.1
+2.Append to the Path Variable
+%MAVEN_HOME%\bin
+3.Go to Command prompt and execute mvn -v to check if maven is successfully installed
+
+
+Go to Command Prompt and navigate to the location where MavenProject is created
+and execute the command
+mvn clean <-- delete the target folder so that target is newly created and the src folder and is compiled and run using mvn test
+mvn clean test
+
+Jenkins
+=======
+Jenkins is a build deployment tool 
+1.Download jenkins from 
+https://www.jenkins.io/download/
+Click on Generic Java Package (jenkins.war)	
+Jenkins_2.269
+
+Location of jenkins.war is 
+F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Softwares\Jenkins_2.269\Jenkins_2.269
+
+Open Command prompt and navigate to the location where jenkins.war file is located
+Execute the command java -jar jenkins.war 
+to install jenkins 
+Till you see the message  Jenkins is fully up and running
+Now, GO to the browser and navigate https://localhost:8080/
+Login to Jenkins Page 
+username/password credentials
+username = admin
+password = pick the password from location
+C:\Users\<<Accountname>>\Anindita\.jenkins\secrets\InitialAdminPassword 
+open it in notepad and paste it in the password column
+f86531ad5ab94e56aa2a59189f9d8c85	
+Click on Continue
+Click on Install Suggested Plugins
+Click on Skip and Continue as admin
+Click on Save and Finish
+Click on Start using Jenkins
+
+Configure JDK and Maven
+Click on Manage Jenkins
+Click on Global Tools Configuration
+Configuring JDK in Jenkins
+=========================
+Click on Add JDK
+uncheck install automatically
+Specify Name as JAVA_HOME
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_211
+
+Configuring Maven in Jenkins
+============================
+Click on Add Maven
+Specify Name as MAVEN_HOME
+MAVEN_HOME=F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Softwares\apache-maven-3.8.1-bin\apache-maven-3.8.1
+Click on Apply and Save
+
+Create a Jenkins JOb
+====================
+Click on New item
+Specify the MavenProject
+Click on FreeStyle and Click on OK 
+In the Dashboard, Select MavenProject downarrow and click on Configure
+Go to Build Environment Tab > Select Add Build step and Select Invoke Top Level Maven Targets
+Select the Maven Version as configured in Global Tools Configuration in Jenkins
+Selected MAVEN_HOME
+GOals nothing but targets
+clean test
+Click on Advanced
+Specify the location of pom.xml of the MavenProject
+F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace\MavenProject\pom.xml
+Click on Apply and Save
+Click on Build Now
+Click on Build#1
+Click on Console Output
+
+Selenium Grid
+=============
+Selenium Grid is used for Parallel/Distributed/Volumnous Execution/Multiple Environment/Remote Execution
+1000 testcases <-- 1 resource - he/she would run it in sequence
+we can distribute 4 resources - ofcourse - the testpack have to be independent of each of time each resource - can work for 250 testcases and run the test cases in parallel 
+R1    R2    R3    R4
+250   250   250   250
+
+For Setting up Selenium Grid,
+we need the jar file selenium-server-standalone-3.14.0.jar 
+3 Parts to Selenium Grid
+1.Infrastructure part <--- Configure a HUb [Server] and 2 Nodes [Ports or remote machines where your testcases will be execute]
+Configuring a HUB
+=================
+
+Configuring Node1
+==================
+
+Configuring Node
+================
+2.Coding 
+3.Execution
+
+
+How does Selenium Grid works?
+Starting Point is 
+testng.xml => we specify the testng testcases to be executed
+If we are executing in multiple environments - we need to create separate testpacks - testpack is represented by <test> tag
+for example, my requirement is to execute testcases in both chrome and firefox
+in web application, when we speak of environment  - Environment comprises of 3 things - Platform (OS) + BrowserType + Browser Version
+
+If there are 2 Environments in which we need to perform our tests - then we can set up nodes - configure one node to run chrome tests and another node to run only firefox tests
+
+node - i can configure to run chrome,firefox and ie - all three but the disadvantage of doing that is - you will not in which node the testcase gets executed 
+node1 - chrome + firefox
+node2 - chrome + firefox 
+
+In case, I am particular to make sure node1 will execute chrome tests then i need to configure node1 to only accept chrome tests - that happens when i configure node1 exclusively for chrome
+
+node1 - chrome
+node2 - firefox
+
+testng.xml -> already specify the testcase needs to be executed in which environment chrome or firefox -> this request is send to the hub (server)[server cannot execute testcases]
+--> server will find the matching configuration in node1 and node2 and send the request to the one which matches the request --> after it sends to matching node for execution, the testcase gets executed in that node
+If there is matching configuration and it is in use and does not have additional instances or instances available, it sends it another node which has matching configuration
+
+Configuring Hub
+================
+Go to Command Prompt and navigate to the location where selenium-server-standalone-3.14.0.jar file is located
+
+Execute the command 
+java -jar selenium-server-standalone-3.14.0.jar  -role hub
+Selenium Grid hub is up and running
+
+GO to the browse http://localhost:4444/grid/console
+
+Configuring Node1
+=================
+java -Dwebdriver.chrome.driver="F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace\SeleniumProject\drivers\chromedriver.exe" -Dwebdriver.gecko.driver="F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace\SeleniumProject\drivers\geckodriver.exe" -Dwebdriver.ie.driver="F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace\SeleniumProject\drivers\IEDriverServer.exe" -jar selenium-server-standalone-3.14.0.jar -role webdriver -port 5555 -hub "http://localhost:4444/wd/hub" -browser browserName=chrome,maxInstances=3 -browser browserName=firefox,maxInstances=2 -browser browserName=iexplore,maxInstances=4 -maxSession 3
+
+By default, when the browser configuration is not explicitly mentioned it shows
+5 chrome,5 firefox, 1 ie
+
+Normally, for running chrome browser, we specify the chromedriver.exe in the code, but for Selenium Grid, it needs to be in the node 
+
+Go to the browse http://localhost:4444/grid/console
+
+java -Dwebdriver.chrome.driver="F:\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace\SeleniumProject\drivers\chromedriver.exe" -jar selenium-server-standalone-3.14.0.jar -role webdriver -port 5555 -hub "http://localhost:4444/wd/hub" -browser browserName=chrome,maxInstances=3
+
+Configure Node2
+===============
+java -Dwebdriver.gecko.driver="F:
+
+\Trainings_Apr2021\TL_ITC_SeleniumJava_Apr2021\Selenium_Workspace\SeleniumProject\drivers\geckodriver.exe" -jar selenium-server-standalone-3.14.0.jar -role webdriver -port 5556 -hub "http://localhost:4444/wd/hub" -browser browserName=firefox,maxInstances=2
+
+Write the code for Grid
+=======================
+Lets create a package named GridPack in SeleniumProject
+
+Local Execution will not make a difference if you selenium-java-3.14.0 jars
+but for remote execution, remove all the jars pertaining selenium-java-3.14.0 and replace selenium-server-standalone=3.14.0.jar
+
+for parallel execution, we need couple of more things 
+1.parallel="tests" - i want the test packs run in parallel - this needs to be specified in suite tag

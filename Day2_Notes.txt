@@ -1,0 +1,308 @@
+Day 1 - Recording Video
+======================
+Please find the Recording links:
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EVwIb0A_DG5OgHDpzTP6wiUBvmzPkqLN1XPjjCInYEcjqw
+
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EVwIb0A_DG5OgHDpzTP6wiUBvmzPkqLN1XPjjCInYEcjqw
+
+1.Interfaces
+2.Exception Handling
+3.String Manipulations
+[File Handling and Collections during Selenium Sessions]
+
+1.Selenium WebDriver Overview
+2.Configuring Selenium WebDriver in Eclipse IDE
+3.Launching different types of browsers
+4.Identifying elements using different locator strategies
+
+Interfaces
+==========
+1.Just like Classes are a blue print for Objects - Similarly, Interface is a template for classes - we will see how 
+2.Interfaces comprises of abstract methods and final variables
+3.Abstract methods does not have any implementation - it just has method declaration with no body - It implies if any class is implementing this interface, that class needs to implement the abstract methods in the interface.
+4.How to declare or define an interface
+public interface <<interfacename>>{
+    //abstract methods and final variables
+}
+5.For example, if there are 3 classes - all the classes are implementing an  interface, it implies all the classes will implement the abstract methods of the interface and thus will common behavior implemented across the classes which has implemented the interface. Thus interface acts as a template for a class. 
+
+Example of Interface Bank
+public interface Bank{
+  public void Debit();
+  public void Credit();
+  public void TransferMoney();
+}
+
+I am going to 3 classes named HDFCBank, CitiBank, ICICIBank and lets say all the 3 classes implement the interface Bank 
+To show class HDFCBank implements the interface Bank - 
+- this is represented as below 
+public class HDFCBank implements Bank{
+  public void Debit(){
+
+  }
+
+  public void Credit(){
+
+  }
+
+  public void TransferMoney(){
+
+  }
+}
+
+when ever we mention class implements interface - 
+there are 2 options
+1)Implement the unimplemented methods of interface in the class implementing the interface
+
+2)Do not implement the unimplemented methods of the interface and make the class abstract - because if the methods are unimplemented - the methods are abstract and even if there is one abstract method in the class, the class becomes abstract
+
+3.Apart from this, each of the classes can have their own methods 
+
+4.All the 3 classes implementing the interfaces require us to create 3 intances - separately for each class 
+We should be able to access the common behavior of the interface via object reference and be able to show the implementation of the class
+
+5.Go to one the classes and i will not implement or i will comment one of the implemented classes -  the class becomes abstract
+
+6.When a class becomes abstract or is abstract, it implies it has atleast one abstract method - an abstract class cannot instantiated - means you can create an object instance of that class - so now since, HDFCBank class is abstract, in BankTest - it will show error during Object creation
+
+7.In OOPS, Abstraction - when it comes to Interfaces because there is no body or all methods defined in interface are abstract - it is 100% abstraction
+
+Now, when it comes Abstract classes - Abstraction can range from 0 to 100 % based on or depending on how abstract methods of the interface are implemented or unimplemented 
+
+3 methods in HDFCBank and 1 method is unimplemented - abstraction level is 33% 
+
+Exception Handling
+==================
+1.I want to raise an exception deliberately
+We use raise new Exception;
+This is normally predominately used for business rules 
+
+2.Exception Propagation
+main -- method1 - method2 - method3 - lets throw an exception
+
+3.throws keyword - it needs to be compared with try catch block
+in the method, when you see throws, it implies that you are explicitly mentioning that that there is a probability of this type of exception happening in this method 
+
+4.throws only tells the probability of what types of exception can happen in that method - but it does not handle the exception - that is achieved by try catch block
+
+5.Normally for Design Time Exceptions - it explicitly specifies it in the method definition using throws keyword 
+
+String Manipulations
+====================
+1.trim() removes padded spaces from left and right sides of the String
+String sbmi = "BMI = 20.1 kg/m2";
+
+Configuring Selenium WebDriver in Eclipse IDE
+=============================================
+1.Download and reference selenium webdriver 3.14.0 jars
+https://selenium-release.storage.googleapis.com/index.html?path=3.14/
+Selenium_Training
+  Selenium_Workspace
+  Softwares
+https://selenium-release.storage.googleapis.com/index.html?path=3.14/
+i)IEDriverServer_Win32_3.14.0.zip
+ii)selenium-java-3.14.0.zip
+iii)selenium-server-standalone-3.14.0.jar
+
+2.For Configuring Selenium WebDriver in Eclipse IDE
+a)Unzip selenium-java-3.14.0.zip 
+Extract to selenium-java-3.14.0/
+
+b)Select the Project > Right Click Select Build Path > Configure Build Path > Java Build Path is default select in left panel > Select Libraries tab > Click on Add External Jars - Go to the location where 
+selenium-java-3.14.0 is located - select the 2 jars from the main folder and Click on Open and Again Click on Add External jars and select all the jars from lib folder (Ctrl+A) and Click on OPen and Click on Apply and Ok 
+
+3.Downloading the compatible chromedriver.exe for your Chrome Browser 
+1)Find the version of your Chrome Browser
+Launch Chrome Browser > Click on 3 dots > Select Help > Select About Google Chrome 
+Google Chrome Browser => Version 89.0.4389.114 (Official Build) (64-bit)
+
+2)Download the compatible chromedriver.exe for the Chrome Browser version 89.0.4389.114
+1)Launch your Browser > Search for Chromedriver download 
+Go to the url
+https://chromedriver.storage.googleapis.com/index.html?path=89.0.4389.23/
+2)Download  chromedriver_win32.zip and rename with version number 
+chromedriver_win32_89.0.4389.23.zip
+and place it in Softwares folder and Unzip the zipped file
+
+
+How to launch and navigate to an url in Chrome Browser
+======================================================
+1.Create a package named SeleniumPack under src folder
+2.Create a class named LaunchBrowser.java in SeleniumPack with option 
+public static void main(String[] args)
+3.
+
+ChromeDriver driver = new ChromeDriver();
+//navigate to the url 
+driver.get("https://www.google.com/");
+
+This request of launching browser and navigating url requires to be send an request to chromedriver.exe
+
+Even before launching the actual browser, we need to point to the path of the driver executable
+System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+
+We will keep the driver exe inside the project in drivers and provide the relative path with respect to the project
+
+for firefox driver 
+===================
+1) Mozilla Firefox Browser Version ==> 
+Go to Help Menu > Select About Firefox and Get the Version
+84.0.2 (64-bit)
+
+2)Go to Google and search for geckodriver downloads
+Click on the first link 
+Click on 0.29 
+Scroll download and Download geckodriver-v0.29.0-win64.zip
+Place the downloaded file in the Softwares folder and Unzip
+Place it in the drivers folder in Eclipse IDE of the Project
+
+3.Write the code to launch firefox 
+4.Launching IE
+2 additional Options need to set for IE
+//Zoom level must be at 100 %
+//Protection Model Level of all security zones are either enabled or disabled
+Launch IE 
+Click on wheel and check Zoom level is 100% or modify it to be at 100% level
+
+Protection Mode Level
+Go to Tools > Select Internet Options > Click on Security Tab
+Protection Model Level of all security zones are either enabled or disabled
+
+Lets quickly have a look at the Selenium JAVA API documentation
+
+
+Selenium Overview
+=================
+1.Selenium is open source automation test tool used to automate web browsers
+Any application that opens on a browser is a web application and can be automated by selenium - selenium automates functionalities pertaining to web applications
+2.Selenium supports all the major browsers - chrome,firefox,ie, microsoft edge, phantomjs,htmlunitdriver,safari and opera
+htmlunitdriver and phantomjs is used for headless automation 
+chrome and firefox also supports headless automation
+Headless automation is used to speeden execution process where in during the time of the execution - it will show or open the GUI of the application but perform all the tests which in process speedens up execution
+3.Selenium supports 6 programming languages - java, c#, python, perl, php, Ruby
+4.Selenium support all the major platforms or OS - Mac, Windows, linux and Solaries
+5.Selenium makes use of unit testing frameworks to development regression suites or for developing robust automation frameworks for developing suites for web applications
+Java ---> TestNG and junit - these frameworks are developed in Java 
+C# ==> Nunit 
+Python ==> UnitTest
+Ruby ==> Rspec
+6.Selenium is not a single tool but a suite of tools - 
+1)Selenium IDE which is a firefox add in - you can find it in Chrome as an add in but firefox in the latest versions - it is no more supportive -
+Please note firefox was native browser of Selenium when it got initially developed
+Selenium IDE it is a record and play back tool for beginners who have little or programming language knowledge and helps to speeden the test creation process
+Selenium IDE does not support many of the features that required for building automation framework development and thus is not a robust tool for full fledged development 
+
+1)Selenium IDE makes a DSL Domain Specific language where in there is no need to learn a programming language - the commands are called selenese commands 
+Export feature of Selenium IDE allows to convert DSL or Selenese Commands to compatible code in Selenium WebDriver or Selenium RC
+
+2)Selenium RC and Selenium Webdriver are both good for robust automation framework development but Selenium RC is deprecated and no longer supported - Selenium WebDriver is used for building automation frameworks - both the tools make use of any programming language of their choice - java,C#,python,perl,php - each of these programming language have their own client library language bindings
+
+3)Selenium WebDriver
+
+4)Selenium Grid is used for distributed for Parallel or Remote Execution - supports executing in multiple environments and also volumnous regression suites in distributed or parallel execution mode
+
+Apart from that WebDriver is also an interface in our client library 
+
+Selenium WebDriver Architecture
+===============================
+Programming Language [Java] - Test Scripts are written in Selenium with the Java Programming Language - Code we have written can be considered as the Client Side Code ===> Send the Request in the form a JSON Wire Protocol to the Specific browser HTTP Server 
+for chrome browser the HTTP Server is chromedriver.exe
+for firefox browser the HTTP Server is geckodriver.exe
+for IE browser, the HTTP Server is IEDriverServer.exe
+The HTTP Server specific to the browser sends the request to the actual browser 
+chrome Browser [ by creating an instance of CHromeDriver class]
+The actual browser sends the HTTP Response back to the Client and you can see the Results in the browser
+
+Every line of code internally works a REST API Request
+
+
+Automation - is process of simulating user actions 
+1.identification of the elements in the web application
+2.to perform actions on the identified elements [ retrieve and entry operations _ navigations etc]
+3.testing involves comparing actual with expected results - by checking on the properties of the elements 
+
+Locating Elements
+=================
+Identification of elements can happen in multiple ways 
+There are 8 location strategies to identify elements
+id, name, class, tagname, linkText, partialLinkText, xpath, css 
+text() and pattern match on attribute values, xpath-axis
+
+1.HTML comprises of tags
+Opening tag and closing tag
+<!DOCTYPE html> 
+<html><--- opening tag
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html> <--- closing tag
+
+Page Title <- which appears between opening and closing tag is plain text
+since it appears in title tag - it displays the text in the page title
+Each of these tag has come also have some addition information in the form of attributes
+
+for this we will go to the website 
+https://www.calculator.net/calorie-calculator.html
+
+<input type="text" name="cage" id="cage" value="25" class="inhalf" onkeyup="iptfieldCheck(this, 'r', 'pn');">
+
+type="text"
+name="cage"
+id="cage"
+value="25" 
+class="inhalf" 
+
+1.type = text attribute  and input tag ==> textbox
+2.name, id, type, value and class are attributes of this element
+3.locating elements happens via locator strategies id,name,class
+they are nothning but attribute information in the HTML element
+if I have identify the age Textbox > Right Click and select inspect element
+and get the element details 
+This age Textbox element can be identified by id, name and class
+ofcourse because element has the attribute information
+name="cage"
+id="cage"
+class="inhalf" 
+value = "25" it implies to the default value displayed int he textbox 
+if we want to modify the value, we need to use sendKeys
+
+THere are 2 ways find an element in Selenium WebDriver
+1.findElement <- returns a single WebElement
+<- if there is a match found, then it will return the element
+<- if there is more one match found, then it will return first occurrence of element
+<- if there is no match found, then will throw an exception NoSuchElementException 
+2.findElements <- returns a list of WebElements
+if there is a single or more than one match found, it will return list of single or multiple elements
+if there is no match found, in this case it will return an empty list
+
+1.identify the height element by name 
+2.identify the height element by classname
+3.provide a wrong address and check if it throws exception
+
+
+There can be more than one element having the same name or classname 
+
+<input type="radio" name="csex" id="csex1" value="m" checked="">
+<input type="radio" name="csex" id="csex2" value="f">
+
+1.we want to use findElements - to get a list of web elements + identify by locator strategy name 
+2.if female is not selected, we will select female
+
+Search for ChroPath in chrome and Add Extension 
+
+1.identify by class name + extract web table and display in tabular format 
+2.we are extracting plain text - getText() [ to get any text between opening and closing tag - we use getText()
+3.rows are identified by <tr> tag name and cells by <td> tagname in HTML
+if there is a header row --> then header cells indicated by <th>
+in this table, we dont have header cells
+4.All this while, we have identified elements w.r.t to page that is via driver object - instance of current web page 
+but in this case, we have 4 tables, to find the rows - we need to identify the rows with respect to the identified table and not the page - otherwise it will list all the rows of all the tables
+we will use findElements with respect to table element and driver object
+5.we are going to identify the rows and cells using tagname <tr> and <td> - here we will make use tagname locator strategy
+

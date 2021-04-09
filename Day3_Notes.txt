@@ -1,0 +1,375 @@
+Day2 - Recorded Video Link
+==========================
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EXClEE8ZGABEjvXLgms14DIB44APm1b5WkaERYc5TYiJ2w
+
+1.Locating elements by linkText,PartialLinkTest,XPath,CSS, 
+text(),Pattern match on attribute values using xpath and css
+
+2.Synchronization, Invoking Javascripts, Handling Alerts, Window navigation, Frames, Ajax Suggestion, Handling Mouse Operations, Capturing Screenshots
+
+LinkText -> Identifying a link using its text - When we identify a link via linkText, it implies that it is an Exact Match
+If the link name is BMI - I have to identify the link by its exact text BMI
+WebElement BMILink = driver.findElement(By.linkText("BMI"));
+BMILink.click();
+
+PartialLinkText --> Identifying a link by its Partial Text --> Not an Exact Match - Partly matched 
+If I like to identify a link which contain or has Weight in its text, we can identify this element using partialLinkText
+
+WebElement IdealWeightLink = driver.findElement(By.partialLinkText("Weight"));
+IdealWeightLink.click();
+
+THe moment the page is refreshed - the page gets reloaded 
+Exception in thread "main" org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+
+1.NoSuchElementException
+2.StaleElementReferenceException
+
+Identifying elements by XPath
+=============================
+Sometimes, the elements we like to inspect or identify do not enough attribute information to identify itself - Since, there are no element attributes, it is not self sufficient to identify itself.
+In this situation, we identify those elements either via XPath or CSS 
+Any element that cannot be identified by attribute based search using id,name or class, in that case, we go for structured based search using xpath or css
+
+I can identify an element using absolute xpath or relative xpath
+Absolute xpath - is not recommeded 
+In Absolute xpath, we get the address by identifying from the root node <html> tag
+
+Absolute xpath of Age Label
+1.parent child relationship - child tag embedded in parent tags
+2.sibling relationship - tags at the same level
+
+Guidelines 
+1.Absolute xpath is indicated by single forward / and it starts with root node which is <html> tag in this case
+2.separator for Parent child relationship when i am building absolute/rel xpath - /
+parent tag = <html>
+child tag =<body>
+/html/body
+3.sibling relationship 
+div <--- div[1] 
+div <--- div[2]
+div <--- div[3]
+/html/body/div[3]/div[1]/div[5]/table[1]/tbody/tr[1]/td[1]
+
+Relative xpath
+==============
+In Relative xpath,we identify the address with respect to the identify immediate parent element which has id,name or class - with the help of the attribute information of the immediate parent element, we can identify the element we are looking for.
+1.Relative XPath - can start anywhere - we indicate this by double forward slash //
+2.parent child and sibling relationship
+3.instead of index to identify an element - alternatively we can use attribute information of the immediate parent element to identify the element in question
+//table[1]/tbody/tr[1]/td[1]
+//table[@id='calinputtable']/tbody/tr[1]/td[1]
+Since, id attribute is enough to identify this element, we would not require the tagname table - it can replaced with wild character * [regardless of any tagname - identify the element by id attribute with value calinputtable
+
+So, instead of using index to identify an element - we can use attribute filter
+//tagname[@attributename='attributevalue']/childtagname[index]/...
+
+//*[@id='calinputtable']/tbody/tr[1]/td[1]
+
+/html/body/div[3]/div[1]/div[5]/table[1]/tbody/tr[1]/td[1]
+//*[@id="calinputtable"]/tbody/tr[1]/td[1]
+
+Identify all the elements in web page by relative path
+=======================================================
+//*
+
+Identify all the table elements 
+//table
+
+Identify all the elements that have id attribute
+================================================
+//*[@id]
+
+Identify the element that has id attribute with value calinputtable
+//*[@id='calinputtable']
+
+Now, lets identify the elements which were identify by id,name or class
+id='cage'
+//*[@id='cage']
+
+name='csex'
+//*[@name='csex']
+
+class='cinfoT'
+//*[@class='cinfoT']
+
+Pattern match on attribute values on xpath
+==========================================
+3 functions
+starts-with
+contains
+ends-with
+
+- Identify all elements having attribute id starting with c
+- Identify all elements having attribute name containing height
+- identify all elements havign attribute id ending with weight
+
+Exact Match
+//*[@id='c']
+//*[@name='height']
+//*[@id='weight']
+
+Pattern match on attribute values using xpath
+==============================================
+//*[starts-with(@id,'c')]
+//*[contains(@name,'height')]
+//*[ends-with(@id,'weight')]
+
+Identifying elements by Css Selectors
+======================================
+CSS stands for Cascading Style Sheets
+it is used to style of web pages and loaded before the page is loaded
+Css Selectors can be used to identify elements 
+
+1.css selectors directly with tagname or wild character *
+in xpath it starts with //tagname
+in css, it starts with tagname
+2.parent child relationship separator is >
+parenttag > child tag
+//html/body
+html > body
+3.sibling relationship 
+in xpath, 
+div <--- div[1] 
+div <--- div[2]
+div <--- div[3]
+
+in css 
+div <--- div:nth-child(1)
+div <--- div:nth-child(2)
+div <--- div:nth-child(3)
+4.Attribute filter
+in xpath
+tagname[@attributename='attributevalue']
+in css
+tagname[attributename='attributevalue']
+
+in xpath
+//*[@id="calinputtable"]/tbody/tr[1]/td[1]
+
+in css
+*[id='calinputtable'] > tbody > tr:nth-child(1) > td:nth-child(1)
+
+apart from the above guidelines, we have 2 more additional identification approach using id and class
+#idvalue 
+# implies we are identifying an element by its idvalue in css
+id=cage
+in css, #cage
+
+identify by class 
+=================
+.classvalue
+. implies, we are identifying element by its classvalue in css
+class=cinfoT
+.cinfoT
+
+in css
+*[id='calinputtable'] > tbody > tr:nth-child(1) > td:nth-child(1)
+#calinputtable > tbody > tr:nth-child(1) > td:nth-child(1)
+
+Now, this same address we can get it our inbuilt developer tool of the chrome browser
+Right click on element AgeLabel > Select Inspect> It will highlight the element in the HTML Page > RIght Click and Select Copy selector
+
+#calinputtable > tbody > tr:nth-child(1) > td:nth-child(1)
+
+Pattern match on attribute values in Css Selectors
+===================================================
+//*[starts-with(@id,'c')]
+//*[contains(@name,'height')]
+//*[ends-with(@id,'weight')]
+
+
+Exact Match in css
+==================
+[id='c']
+[name='height']
+[id='weight']
+
+starts-with in xpath ==> ^ in css
+contains in xpath ==> * in css
+ends-with in xpath ==> $ in css
+
+Pattern match in Css
+====================
+[id^='c']
+[name*='height']
+[id$='weight']
+
+Changing dropdown values
+=========================
+1.single select and another multiselect dropdown
+2.drop down values can be static or dynamic
+
+activity dropdown can be identified in 3 ways
+by index position starts with 0
+by value attribute 
+by visible text that was displayed on the page
+
+dropdown are identified by html tag select
+each of the values in the dropdown identified by option tag
+
+If i identify the element by index - in that case the dropdown is static in nature 
+if it is not static, it would not point to values correctly otherwise it is recommeded if the dropdown is dynamic and changes values
+
+Bangalore - 0
+Chennai - 1
+Mumbai - 2
+Kolkata - 3
+
+Bangalore - 0
+Chennai - 1
+Kerala - 2
+Mumbai - 3
+Kolkata - 4
+
+multiselect or single select - normally there is an attribute multiple=true if it is specified in the select tag - it implies it is a multiselect dropdown
+one which are trying is a single select
+how to check whether a dropdown is single select or multi select
+isMultiple() 
+
+text() function
+===============
+//*[@id='cactivity']/option[1]
+//*[@id='cactivity']/option[@value='1.725']
+//*[@id='cactivity']/option[text()='Extra Active: very intense exercise daily, or physical job'] ==> exact match
+//*[@id='cactivity']/option[contains(text(),'Active')] => 3 elements
+
+2.Synchronization, Invoking Javascripts, Handling Alerts, Window navigation, Frames, Ajax Suggestion, Handling Mouse Operations, Capturing Screenshots
+
+Synchronization - 
+1.Thread.sleep(2000); //paused or delayed the next step by 2000 milliseconds or 2 seconds
+2.there are 2 types of implicit wait and another explicit wait
+
+What is synchronization?
+=======================
+We need to synchronize when the code execution speed is faster than application execution speed - in this situation, we require to go to synchronization
+
+Let me take an example
+1.Launch browser and navigate to url
+2.login with userid and password
+3.click on submit
+put a wait time - hard code is not a good practice - we need to specify a wait within we can make sure the element in which we would like to enter data becomes viisble - it implies we need to make sure to check the element is visible before entering data - this is achieved through explicit wait
+4.Logged in screen - here we want to enter some details like Location 
+
+
+Clicking on Submit - 3rd step - 
+Enter data into location field
+If the operation submit is not completed performed - the logged in page is not completely loaded - in that case, there can be possibility of location field not visible and thus not accessible and thus we cannot enter data into location field
+in case, we try to enter data into location field when it is not accessible because the page is not loaded - it throw error - thus avoid or eliminate this issue - it is essential synchronize where in it is important complete previously operation before the next operation can be performed
+
+
+There are 2 types of wait - implicit and explicit
+In implicit wait, we provide a flat wait time within the operation needs to be completed but in most cases, we might not need to time set and it delay the code execution - because it applies all the statements after which is declared - we need to set a very small time
+driver.manage().timeouts().implicitlwait(TimeUnit.SECONDS,10);
+it will apply all the statmeents after this is declared till driver.close();
+
+Lets take an example of Explicit Wait + Mouse Operations using Actions Class
+============================================================================
+Url = https://demo.opencart.com/
+
+1.Navigate to the url https://demo.opencart.com/
+2.Click on ComponentsMenu Link
+3.Check for the presence of PrinterElement
+4.Click on Printer Element
+
+or 
+
+4.Use Mouse Operation to Move to the Printer Element and Click on the Printer Element
+
+Please note when you do an operation where in there is probability of failure, you need to place it in try and catch block'
+also, i have identified the PrinterElement and stored it in a WebElement 
+
+In Mouse operations, whenever more than one mouse operation is performed, it is important to use build()
+build() is used to consolidate all the mouse operations in sequence
+perform()- triggers the consolidated mouse operations in sequence 
+if there is one mouse operation - build() is required but perform is required to trigger even if it is one mouse operation
+
+Handling Window Navigation
+==========================
+1.how to perform operations between 2 windows 
+When we click on a link, it redirects the page on the same window
+When i click on a link, if it opens a new window or new tab or window in form of a dialog - in that situation, we are performing window navigation 
+
+1.Login to Citibank Online Internet Banking
+2.Click on Login Now
+3.Enter some data in one of the fields of the new window /new window tab
+4.Close the sub window 
+5.Perform some operation on the main window 
+
+switch operations happens in 3 scenarios
+1.for handling window navigation to switch between windows
+2.for handling frames to switch to a frame
+3.for handling alert popups to switch to an alert
+
+Now, lets us understand how each window is recognized when there are more then one open window 
+Each window comes with a unique windo handle or window id 
+
+Set basically will return a list of window ids of type String
+
+Please note to get the current number of open windows everytime a click operation that opens a new window using driver.getWindowHandles();
+
+When trying to switch the window - after subwindow - if i close the subwindow  ---> NoSuchWindowException 
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+
+NoSuchElementException
+StaleElementReferenceException
+InvalidSelectorException - When the locator address is not in the right syntax - it throws InvalidSelectorException
+//Example of Exception in thread "main" org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //[starts-with(@id,'c')] because of the following error:
+List<WebElement> startswithidcxpath = driver.findElements(By.xpath("//[starts-with(@id,'c')]"));
+
+Note : it is missing tagname or * 
+
+SessionNotFoundException - this happens when you try an operation on an element that driver.close() is performed 
+
+Invoking JavaScripts and Handling Alert Popups
+==============================================
+Lets take an example alerts - Alerts are of 3 types
+Information Alert which is more like a user friendly message  with a OK button
+Confirmation Alert which comes with a OK and Cancel
+Prompt - which takes input from the user 
+
+Normally, in  a real time situation, when we perform any client side validation and perform a submit operation - it will popup an information Alert - now, handling Alert would include the following steps
+1.switch to the alert
+2.Retrieve the Alert Message
+3.Click on OK button of the Alert
+4.Verify the alert message is appropriate to the operation and is it as per the requirement
+
+we will also create an alert using javascript  - that is where we are invoke javascripts - so we are creating and handling the alert
+
+NoAlertPresentException --> This happens when you are trying to switch to an alert that is not present
+UnhandledAlertException ---> This happens when an alert is not handled 
+
+Handling Frames
+================
+Frame is used to position elements in section of the page 
+
+Points to note
+==============
+1.frames can be identified in 3 days 
+index, name of the frame and frame element
+you can switch to a frame in one of the ways 
+driver.switchTo().frame(frameindex or framename or frame element)
+
+2.I can also identify frame index = 0
+
+3.In the example, we have taken, the frame does not have a name attribute thus we cannot identify by name
+
+4.since, there is only one frame, if i specify the index as 1,  it will throw
+NoSuchFrameException
+
+5.Drag and drop element if identified before the switch operation, it will not be accessible inside the frame - it is accessible only if the elements are identified after switch to frame.
+Only after switching to a frame, can we perform operations on elements inside the frame.
+
+6.driver.switchTo().defaultContent();
+If there are more than one frame in a page, then switching from one frame to another frame cannot happen directly - you need to back to the main window which happens via driver.switchTo().defaultContent();
+from window, again you can switch to another frame 
+
+Note - To check - how to scroll to the bottom of the page
+
+Handling Ajax Suggestion Box
+============================
+
+Capturing Screenshots
+=====================
+
+Install TestNG and Perform small test
+=====================================
