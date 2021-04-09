@@ -1,17 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10193" started-at="2021-04-09T04:40:18Z" finished-at="2021-04-09T04:40:28Z">
+  <suite name="Suite1" duration-ms="33" started-at="2021-04-09T04:58:28Z" finished-at="2021-04-09T04:58:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10193" started-at="2021-04-09T04:40:18Z" finished-at="2021-04-09T04:40:28Z">
-      <class name="testngPack.CaptureScreenshot">
-        <test-method status="PASS" signature="getScreenshot()[pri:0, instance:testngPack.CaptureScreenshot@3aa9e816]" name="getScreenshot" duration-ms="10155" started-at="2021-04-09T10:10:18Z" finished-at="2021-04-09T10:10:28Z">
+    <test name="Regression Suite" duration-ms="33" started-at="2021-04-09T04:58:28Z" finished-at="2021-04-09T04:58:28Z">
+      <class name="testngPack.testngAllAnnotations">
+        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="BeforeSuite" is-config="true" duration-ms="8" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getScreenshot -->
-      </class> <!-- testngPack.CaptureScreenshot -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- BeforeSuite -->
+        <test-method status="PASS" signature="BeforeSuite()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="BeforeSuite" is-config="true" duration-ms="0" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeSuite -->
+        <test-method status="PASS" signature="BeforeTest()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="BeforeTest" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="BeforeTest()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="BeforeTest" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTest -->
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="BeforeClass" is-config="true" duration-ms="0" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="BeforeMethod" is-config="true" duration-ms="0" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="testngmethod()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="testngmethod" duration-ms="5" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testngmethod -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="AfterClass" is-config="true" duration-ms="0" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterClass -->
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="AfterTest" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="AfterTest()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="AfterTest" is-config="true" duration-ms="0" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTest -->
+        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:testngPack.testngAllAnnotations@fcd6521]" name="AfterSuite" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSuite -->
+        <test-method status="PASS" signature="AfterSuite()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="AfterSuite" is-config="true" duration-ms="6" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSuite -->
+      </class> <!-- testngPack.testngAllAnnotations -->
+      <class name="testngPack.testngAllAnnotations2">
+        <test-method status="PASS" signature="BeforeClass()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="BeforeClass" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="BeforeMethod()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="BeforeMethod" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeMethod -->
+        <test-method status="PASS" signature="testngmethod()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="testngmethod" duration-ms="2" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testngmethod -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="AfterClass" is-config="true" duration-ms="1" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterClass -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:testngPack.testngAllAnnotations2@fe18270]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2021-04-09T10:28:28Z" finished-at="2021-04-09T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+      </class> <!-- testngPack.testngAllAnnotations2 -->
+    </test> <!-- Regression Suite -->
+  </suite> <!-- Suite1 -->
 </testng-results>
