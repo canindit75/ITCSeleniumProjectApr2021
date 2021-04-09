@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9527" started-at="2021-04-08T12:00:54Z" finished-at="2021-04-08T12:01:04Z">
+  <suite name="Default suite" duration-ms="10193" started-at="2021-04-09T04:40:18Z" finished-at="2021-04-09T04:40:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9527" started-at="2021-04-08T12:00:54Z" finished-at="2021-04-08T12:01:04Z">
-      <class name="com.itc.calc.testcases.CalorieCalculatorPageTestCase">
-        <test-method status="PASS" signature="EnterCalorieDetails()[pri:0, instance:com.itc.calc.testcases.CalorieCalculatorPageTestCase@445b84c0]" name="EnterCalorieDetails" duration-ms="9507" started-at="2021-04-08T17:30:55Z" finished-at="2021-04-08T17:31:04Z">
+    <test name="Default test" duration-ms="10193" started-at="2021-04-09T04:40:18Z" finished-at="2021-04-09T04:40:28Z">
+      <class name="testngPack.CaptureScreenshot">
+        <test-method status="PASS" signature="getScreenshot()[pri:0, instance:testngPack.CaptureScreenshot@3aa9e816]" name="getScreenshot" duration-ms="10155" started-at="2021-04-09T10:10:18Z" finished-at="2021-04-09T10:10:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EnterCalorieDetails -->
-      </class> <!-- com.itc.calc.testcases.CalorieCalculatorPageTestCase -->
+        </test-method> <!-- getScreenshot -->
+      </class> <!-- testngPack.CaptureScreenshot -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

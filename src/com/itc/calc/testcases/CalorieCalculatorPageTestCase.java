@@ -11,6 +11,7 @@ import com.itc.calc.pages.BMIPage;
 import com.itc.calc.pages.CaloriePage;
 import com.itc.calc.pages.CaloriePage1;
 import com.itc.calc.utilities.PropertyReader;
+
 public class CalorieCalculatorPageTestCase {
 	public static WebDriver driver = null;
 	@Test
