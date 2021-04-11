@@ -2,6 +2,12 @@ Day 4 - Recording Video
 =======================
 https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EYyh3Jy2LRVNkiTRBYa_iqYBN6pCqtwf8qyzVy1MW02ZMQ
 
+Day 5 - Recording Video
+========================
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/ESUP54S-dK1LkAyWbYwQs74BBi_53cR-MU-KPZHrzADCjw
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/EcAzPDyEMWxBsVdmDNf61LwB2aAr8kidX-PfhdggdjyuNg
+https://i3l-my.sharepoint.com/:v:/g/personal/32473_itcinfotech_com/Ed3H9wuCtahIlz1_oWA0kT4B7AMNtP2GOAfDIXucLplvIA
+
 1.Extent Reporting - Third Party Reporting Tool
 2.MavenProject - Build Management Tool 
 3.Selenium Grid - Parallel or distribution or Remote execution or Multiple Env
